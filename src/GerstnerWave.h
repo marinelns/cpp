@@ -7,7 +7,7 @@
 //classe dont chaque instance contient la definition d'une onde differente
 
 class GerstnerWave{
-  private :
+  protected :
     double _amplitude;
     double _phase;
     Dvector _directionOnde;

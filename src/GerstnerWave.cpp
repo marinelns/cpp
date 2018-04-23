@@ -23,10 +23,10 @@ GerstnerWave::GerstnerWave(const GerstnerWave& g){
 
 GerstnerWave::~GerstnerWave(){}
 
-double GerstnerWave::getAmplitude() const {return this->_amplitude};
-double GerstnerWave::getPhase() const {return this->_phase};
-Dvector GerstnerWave::getDirection() const {return this->directionOnde};
-double GerstnerWave::getFrequence() const {return this->_frequence};
+double GerstnerWave::getAmplitude() const {return this->_amplitude;}
+double GerstnerWave::getPhase() const {return this->_phase;}
+Dvector GerstnerWave::getDirection() const {return this->_directionOnde;}
+double GerstnerWave::getFrequence() const {return this->_frequence;}
 
 GerstnerWave&GerstnerWave::operator = (const GerstnerWave& g){
   this->_directionOnde=Dvector();
@@ -42,7 +42,8 @@ double GerstnerWave::operator()(Dvector point, double t){
   return hauteur_vague;
 }
 
-void main(){
-  GerstnerWave g = GerstnerWave(5.9, 3, Dvector(2), 6);
-  printf("phase %i\n", g._phase);
-}
+
+// int main(){
+//   GerstnerWave g = GerstnerWave(5.9, 3, Dvector(2), 6);
+//   printf("phase %f\n", g.getPhase());
+// }

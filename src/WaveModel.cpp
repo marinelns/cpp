@@ -1,4 +1,4 @@
-#include "WaveModel.H"
+#include "WaveModel.h"
 
 WaveModel::WaveModel(){
   this->_direction = Dvector();
@@ -33,7 +33,7 @@ WaveModel& WaveModel::operator = (const WaveModel& w){
   memcpy(&this->_alignement, &w._alignement, sizeof(Dvector));
   this->_intensite = w._intensite;
   this->_longueur = w._longueur;
-  this->_ajustement = w._ajustement
+  this->_ajustement = w._ajustement;
 }
 
 Dvector WaveModel::getDirection() const {return _direction;}
@@ -41,3 +41,11 @@ Dvector WaveModel::getAlignement() const {return _alignement;}
 double WaveModel::getIntensite() const {return _intensite;}
 double WaveModel::getLongueur() const {return _longueur;}
 double WaveModel::getAjustement() const {return _ajustement;}
+
+// 
+// int main(){
+//   Dvector v = Dvector(2,1);
+//   WaveModel w = WaveModel(v, v, 3, 5, 2);
+//   w.getDirection().display(std::cout);
+//   printf("On cherche la longueur %f \n ", w.getLongueur());
+// }

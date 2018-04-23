@@ -34,9 +34,9 @@ class Height{
     //Accesseur a ny
     double getNy() const;
     //operateur d'affectation
-    Height& operator = (const Height& h);
+    Height& operator=(const Height& h);
     //operateur d'acces a la hauteur
-    double& operator() (double Lx, double Ly);
+    double& operator() (double Lx, double Ly)const;
 
 };
 

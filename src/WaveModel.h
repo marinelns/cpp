@@ -22,15 +22,15 @@ class WaveModel{
     //constructeur par copie
     WaveModel(const WaveModel & w);
     //destructeur
-    ~WaveModel();
+    virtual ~WaveModel();
     //operateur d'affectation
-    WaveModel& operator = (const WaveModel& w);
+    virtual WaveModel& operator = (const WaveModel& w);
     //accesseurs
-    double getDirection();
-    double getAlignement();
-    double getIntensite();
-    double getLongueur();
-    double getAjustement();
+    virtual Dvector getDirection() const;
+    virtual Dvector getAlignement() const;
+    virtual double getIntensite() const;
+    virtual double getLongueur() const;
+    virtual double getAjustement() const;
 
     //manque le foncteur
 
