@@ -5,6 +5,7 @@
 #include "WaveModel.h"
 #include "GerstnerWave.h"
 
+#include <vector>
 #include <list>
 #include <stdlib.h>
 #include <string.h>
@@ -12,18 +13,26 @@
 #include <iostream>
 
 class GerstnerWaveModel : public WaveModel{
-  public :
-    int nb_ondes;
-    GerstnerWave *ondes;
+    protected :
+      int nb_ondes;
+      vector<GerstnerWave> ondes;
 
-    //constructeur par defaut
-    GerstnerWaveModel();
-    //constructeur avec initialisation des parametres
-    //GerstnerWaveModel(Dvector dir, Dvector align, double inte, double longu, double ajust, int nb);
-    //constructeur par copie
-    GerstnerWaveModel(const GerstnerWaveModel& g);
-    //destructeur
-    ~GerstnerWaveModel();
+    public :
+      //constructeur par defaut
+      GerstnerWaveModel();
+
+      //constructeur par copie
+      //GerstnerWaveModel(const GerstnerWaveModel& g);
+
+      ~GerstnerWaveModel();
+
+      int size() const;
+
+      vector<GerstnerWave> getTab();
+
+      int getSize() const;
+
+      GerstnerWaveModel add(GerstnerWave nouveau);
 };
 
 #endif
