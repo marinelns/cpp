@@ -1,6 +1,6 @@
-PROG = Height Dvector WaveModel GerstnerWave GerstnerWaveModel
-INCLUDES = Height.h Dvector.h WaveModel.h GerstnerWave.h GerstnerWaveModel.h
-OBJ = Height.o Dvector.o WaveModel.o GerstnerWave.o GerstnerWaveModel.o
+PROG = Dvector
+INCLUDES =  Dvector.h
+OBJ = Dvector.o 
 CXX = g++
 CXXFLAGS = -Wall
 

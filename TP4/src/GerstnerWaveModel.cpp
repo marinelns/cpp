@@ -29,13 +29,13 @@ int GerstnerWaveModel::size() const{
   return nb_ondes;
 }
 
-int main(){
-  GerstnerWaveModel tab = GerstnerWaveModel();
-  GerstnerWave g = GerstnerWave(5.9, 3, Dvector(2), 6);
-  printf("phase %f\n", g.getPhase());
-  printf("phase %f \n", tab.getTab()[0].getPhase());
-
-  tab.add(g);
-  printf("phase de g %f \n", tab.getTab()[1].getPhase());
-  printf("la taille du vecteur est maintenant %i\n", tab.getSize());
-}
+// int main(){
+//   GerstnerWaveModel tab = GerstnerWaveModel();
+//   GerstnerWave g = GerstnerWave(5.9, 3, Dvector(2), 6);
+//   printf("phase %f\n", g.getPhase());
+//   printf("phase %f \n", tab.getTab()[0].getPhase());
+//
+//   tab.add(g);
+//   printf("phase de g %f \n", tab.getTab()[1].getPhase());
+//   printf("la taille du vecteur est maintenant %i\n", tab.getSize());
+// }
