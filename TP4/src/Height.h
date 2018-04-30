@@ -1,4 +1,5 @@
 #include "Dvector.h"
+#include <complex.h>
 #ifndef HeightH
 #define HeightH
 
@@ -36,7 +37,7 @@ class Height{
     //operateur d'affectation
     Height& operator=(const Height& h);
     //operateur d'acces a la hauteur
-    double& operator() (double Lx, double Ly)const;
+    complex<double>& operator() (double Lx, double Ly);
 
 };
 

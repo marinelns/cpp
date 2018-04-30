@@ -1,7 +1,7 @@
 #include "Height.h"
 
 Height::Height(){
-  vect = Dvector(0);
+  vect = Dvector();
   lx = 0;
   ly = 0;
   nx = 0;
@@ -57,15 +57,17 @@ Height& Height::operator = (const Height& h){
   return *this;
 }
 
-double& Height::operator() (double i, double j) const {
+complex<double>& Height::operator() (double i, double j) {
     if (i <= nx && j <= ny) {
-        return vect(i*nx + j);
+      double k = i*nx +j;
+      return vect(k);
     }
     throw "La case n'existe pas";
 }
 
-// int main(){
-//   Height h = Height(1,1,1,1);
+int main(){
+  Height h = Height(1,1,1,1);
+  h.getVector().display(std::string);
 //   Dvector vect = h.getVector();
 //   double lx  = h.getLx();
 //   printf("Je suis un vecteur de longeuur %f \n", lx);
@@ -74,4 +76,4 @@ double& Height::operator() (double i, double j) const {
 //   Height h2 = Height(3,2,1,2);
 //   h = h2;
 //   h2.getVector().display(std::cout);
-// }
+}

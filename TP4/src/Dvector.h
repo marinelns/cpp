@@ -10,6 +10,11 @@ using namespace std;
 #include <valarray>
 #include <math.h>
 #include <complex.h>
+#include <sstream>
+#include <assert.h>
+#include <fstream>
+
+
 
 class Dvector{
   private:

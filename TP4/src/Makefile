@@ -1,6 +1,6 @@
-PROG = Dvector
-INCLUDES =  Dvector.h
-OBJ = Dvector.o 
+PROG = Dvector Height
+INCLUDES =  Dvector.h Height.h
+OBJ = Dvector.o Height.o
 CXX = g++
 CXXFLAGS = -Wall
 
