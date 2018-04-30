@@ -1,45 +1,54 @@
-
+#include <string.h>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+#include <fstream>
 #include "Dvector.h"
-
+#include <sstream>
+#include <assert.h>
+const double PI = 3.14159265359;
 
 Dvector::Dvector(Dvector const& autre){
   int taillAutre = autre.taille;
+  tab = new complex<double>[taillAutre];
   taille = taillAutre;
   for(int i = 0; i< taille; i++){
-    tab.push_back(autre.tab[i]);
+    tab[i] = autre.tab[i];
   }
 }
-
-
 
 Dvector::Dvector()
 {
-  int longueur = 3;
-  taille = longueur;
-  for(int i = 0; i< longueur; i++){
-    tab.push_back(0);
-  }
+  int longueur = 0;
+  (complex<double>) *tab;
+  tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
+  this->tab = tab;
+  this->taille = longueur;
 }
 
-Dvector::Dvector(int longueur, int valeur)
+Dvector::Dvector(int longueur, complex<double> valeur)
 {
-  taille = longueur;
-  for(int i =0; i < longueur; i++){
-    tab.push_back(valeur);
+  (complex<double>) *tab;
+  tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
+  for(int i = 0; i < longueur; i++){
+    tab[i] = valeur;
   }
+  this->taille = longueur;
+  this->tab = tab;
 }
 
 Dvector::Dvector(int longueur)
 {
-  taille = longueur;
-  for(int i = 0; i< longueur; i++){
-    tab.push_back(0);
-  }
+  (complex<double>) *tab;
+  tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
+  this->taille = longueur;
+  this->tab = tab;
 }
 
 Dvector::~Dvector(){
-  if(tab.size() == 0){
-    tab.clear();
+  if(tab != NULL){
+    delete[] tab;
   }
 }
 
@@ -75,9 +84,9 @@ Dvector::Dvector(std::string fichier){
 
 //Question 1
 //operateur d'accession a un element du vecteur
-complex<double> & Dvector::operator()(int i){
+complex<double>& Dvector::operator()(int i)const{
   if (i <= taille){
-    return tab.at(i);
+    return tab[i];
   }
   else{
     std::cout <<"Erreur : index invalide";
@@ -92,8 +101,10 @@ Dvector &Dvector::operator=(const Dvector &v){
     return *this;
   }
   else{
-    tab.clear();
-    copy(v.tab.begin(), v.tab.end(), back_inserter(tab));
+    delete[] tab;
+    taille = v.taille;
+    tab = new complex<double>[taille];
+    memcpy(tab, v.tab, taille*sizeof(double));
     return *this;
   }
 }
@@ -114,7 +125,7 @@ Dvector &Dvector::operator=(const Dvector &v){
 Dvector & Dvector::operator+=(const Dvector & v){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    res.tab[i] = res.tab[i] + v.tab[i];
+    res(i) = res(i) + v(i);
   }
   return res;
 }
@@ -123,7 +134,7 @@ Dvector & Dvector::operator+=(const Dvector & v){
 Dvector & Dvector::operator+=(const double & c){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    res.tab[i] = res.tab[i] + c;
+    res(i) = res(i) + c;
   }
   return res;
 }
@@ -132,7 +143,7 @@ Dvector & Dvector::operator+=(const double & c){
 Dvector & Dvector::operator-=(const Dvector & v){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    res.tab[i] = res.tab[i] - v.tab[i];
+    res(i) = res(i) - v(i);
   }
   return res;
 }
@@ -140,7 +151,7 @@ Dvector & Dvector::operator-=(const Dvector & v){
 Dvector & Dvector::operator-=(const double & c){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    res.tab[i] = res.tab[i] - c;
+    res(i) = res(i) - c;
   }
   return res;
 }
@@ -149,7 +160,7 @@ Dvector & Dvector::operator-=(const double & c){
 Dvector & Dvector::operator*=(const Dvector & v){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    res.tab[i] = res.tab[i] * v.tab[i];
+    res(i) = res(i) * v(i);
   }
   return res;
 }
@@ -157,7 +168,7 @@ Dvector & Dvector::operator*=(const Dvector & v){
 Dvector & Dvector::operator*=(const double & c){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    res.tab[i] = res.tab[i] * c;
+    res(i) = res(i) * c;
   }
   return res;
 }
@@ -166,12 +177,12 @@ Dvector & Dvector::operator*=(const double & c){
 Dvector & Dvector::operator/=(const Dvector & v){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    if (v.tab[i] == ((complex<double>) 0)){
+    if (v(i)==((complex<double>)0)){
       std::cout<<"Erreur : division par 0"<<"\n";
       throw 0;
     }
     else{
-      res.tab[i] = res.tab[i] / v.tab[i];
+      res(i) = res(i) / v(i);
     }
   }
   return res;
@@ -186,7 +197,7 @@ Dvector & Dvector::operator/=(const double & c){
   }
   else{
     for(int i = 0; i < taille; i++){
-      res.tab[i] = res.tab[i] * c;
+      res(i) = res(i) * c;
     }
     return res;
   }
@@ -195,19 +206,19 @@ Dvector & Dvector::operator/=(const double & c){
 //question 4:
 //operateur + externe avec un reel
 Dvector operator+(const Dvector & v, const double & c){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
-    v1.tab[i] = v.tab[i] + c;
+    v1(i) = v(i) + c;
   }
   return v1;
 }
 
 Dvector operator+(const double & c, const Dvector & v){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
-    v1.tab[i] = v.tab[i] + c;
+    v1(i) = v(i) + c;
   }
   return v1;
 }
@@ -218,30 +229,27 @@ Dvector operator+(const Dvector & v, const Dvector & w){
     std::cout<<"Impossible d'additionner deux vecteurs de taille différentes"<<"\n";
     throw 0;
   }else{
-    Dvector res;
-    int dimension= v.size();
-    for (int i =0; i < dimension; i++){
-      res.tab[i] = v.tab[i] + w.tab[i];
-    }
+    Dvector res(v);
+    res += w;
     return res;
   }
 }
 
 //operateur - externe avec un reel
 Dvector operator-(const Dvector & v, const double & c){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
-    v1.tab[i] = v.tab[i] - c;
+    v1(i) = v(i) - c;
   }
   return v1;
 }
 
 Dvector operator-(const double & c, const Dvector & v){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
-    v1.tab[i] = v.tab[i] - c;
+    v1(i) = v(i) - c;
   }
   return v1;
 }
@@ -252,7 +260,7 @@ Dvector operator-(const Dvector & v, const Dvector & w){
     std::cout<<"Impossible d'additionner deux vecteurs de taille différentes"<<"\n";
     throw 0;
   }else{
-    Dvector res;
+    Dvector res(v);
     res -= w;
     return res;
   }
@@ -260,18 +268,18 @@ Dvector operator-(const Dvector & v, const Dvector & w){
 
 //operateur / externe avec un reel
 Dvector operator/(const Dvector & v, const double & c){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   if(dimension == 0){
     std::cout<<"Impossible de diviser par le vecteur nul"<<"\n";
     throw 0;
   }else{
     for (int i =0; i < dimension; i++){
-      if(v.tab[i] == ((complex<double>)0)){
+      if(v(i) == ((complex<double>)0)){
         std::cout<<"Impossible de diviser par le vecteur nul"<<"\n";
         throw 0;
       }
-      v1.tab[i] = c/v.tab[i];
+      v1(i) = c/v(i);
     }
     return v1;
   }
@@ -279,14 +287,14 @@ Dvector operator/(const Dvector & v, const double & c){
 }
 
 Dvector operator/(const double & c, const Dvector & v){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   if(c == 0){
     std::cout<<"Impossible de diviser par le vecteur nul"<<"\n";
     throw 0;
   }else{
     for (int i =0; i < dimension; i++){
-      v1.tab[i] = v.tab[i]/c;
+      v1(i) = v(i)/c;
     }
     return v1;
   }
@@ -294,28 +302,28 @@ Dvector operator/(const double & c, const Dvector & v){
 
 //operateur * externe avec un reel
 Dvector operator*(const Dvector & v, const double & c){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
-    v1.tab[i] = c * v.tab[i];
+    v1(i) = c * v(i);
   }
   return v1;
 }
 
 Dvector operator*(const double & c, const Dvector & v){
-  Dvector v1;
+  Dvector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
-    v1.tab[i] = c * v.tab[i];
+    v1(i) = c * v(i);
   }
   return v1;
 }
 
 //operateur - unaire
 Dvector operator-(const Dvector & v){
-  Dvector res;
+  Dvector res(v.size());
   for (int i = 0; i<v.size(); i++){
-    res.tab[i]=-v.tab[i];
+    res(i)=-v(i);
   }
   return res;
 }
@@ -324,7 +332,7 @@ Dvector operator-(const Dvector & v){
 std::ostream & operator << (std::ostream & Out, const Dvector & v){
   Out<<"Dvector : ";
   for (int i =0; i<v.size(); i++){
-    Out<<v.tab[i]<<" ";
+    Out<<v(i)<<" ";
   }
   Out<<"\n";
   return Out;
@@ -333,7 +341,7 @@ std::ostream & operator << (std::ostream & Out, const Dvector & v){
 // //operateur >>
 // std::ostream & operator >> (std::ostream & In, const Dvector & v){
 //   for (int i =0; i<v.size(); i++){
-//     In>>((char)v.tab[i]);
+//     In>>v(i);
 //   }
 //   return In;
 // }
@@ -345,7 +353,7 @@ bool Dvector::operator ==(const Dvector & v){
   }
   else{
     for (int i = 0; i < v.size(); i++){
-      if (tab[i] != v.tab[i]){
+      if (tab[i] != v(i)){
         return false;
       }
     }
@@ -355,23 +363,23 @@ bool Dvector::operator ==(const Dvector & v){
 
 //methode pour modifier la taille du vecteur et remplit
 //le vecteur avec le reel c si le vecteur est augmenté
-// void Dvector::resize(const int & dimension, const double & c){
-//   Dvector res(dimension);
-//   if (dimension > taille){
-//     for (int i = 0; i<taille; i++){
-//       res.tab[i] = tab[i];
-//     }
-//     for (int i = taille; i < dimension; i++){
-//       res.tab[i] = c;
-//     }
-//   }
-//   else{
-//     for (int i = 0; i<dimension; i++){
-//       res.tab[i] = tab[i];
-//     }
-//   }
-//   *this = res;
-// }
+void Dvector::resize(const int & dimension, const double & c){
+  Dvector res(dimension);
+  if (dimension > taille){
+    for (int i = 0; i<taille; i++){
+      res.tab[i] = tab[i];
+    }
+    for (int i = taille; i < dimension; i++){
+      res.tab[i] = c;
+    }
+  }
+  else{
+    for (int i = 0; i<dimension; i++){
+      res.tab[i] = tab[i];
+    }
+  }
+  *this = res;
+}
 
 complex<double> Dvector::pdt_scalaire(Dvector w){
   if (this->size() != w.size()){
@@ -380,66 +388,88 @@ complex<double> Dvector::pdt_scalaire(Dvector w){
   else{
     complex<double> pdt = 0;
     for (int i = 0; i < w.size(); i++){
-      pdt = pdt + (*this).tab[i]*w.tab[i];
+      pdt += (*this)(i)*w(i);
     }
     return pdt;
   }
 }
 
-/////////////////////////// LAB 4/////////////////////
 
-Dvector Dvector::FFT(){
-  Dvector even;
+Dvector Dvector::fft(){
+  int n = this->taille;
+  int N = n/2;
   Dvector odd;
-  int n = int(tab.size());
-  if(n % 2 != 0){
-    std::cout<<"La taille du vecteur n'est pas une puissance de deux"<<"\n";
+  Dvector even;
+  even.tab = ((complex<double>*) malloc(N * sizeof(complex<double>)));
+  even.taille = N;
+  odd.tab = ((complex<double>*) malloc(N * sizeof(complex<double>)));
+  odd.taille = N;
+  if(n%2 != 0 and n != 1){
+    std::cout<<"Erreur : la longueur n'est pas un multiple de 2"<<"\n";
     throw 0;
-  }else{
-    if(n <=1){
-      return *this;
-    }else{
-      int j = 0;
-      while(j <= n){
-        even.tab[j/2] = tab[j];
-        odd.tab[j/2] = tab[j+1];
-        j += 2;
-      }
-      printf("Je suis even\n");
-      even.display(std::cout);
-      printf("Je suis odd\n" );
-      odd.display(std::cout);
-      for(int k = 0; k <= n/2; k++){
-        complex<double> t = odd.tab[k]*((complex<double>) _Complex_I)*sin(-2*M_PI*k/n);
-        tab[k] = even.tab[k] + t;
-        tab[k + n/2] = even.tab[k] - t;
-      }
-      return *this;
-    }
   }
-}
-
-Dvector Dvector::ifft(){
-  Dvector res = *this;
-  int n = ((int)tab.size());
   if(n <= 1){
     return *this;
   }else{
-    for(int k =0; k<=n; k++){
-      res.tab[k] = std::conj(res.tab[k]);
-      std::cout << res;
+    int i = 0;
+    while(i < n){
+      even.tab[i/2] = tab[i];
+      odd.tab[i/2] = tab[i+1];
+      i += 2;
     }
-    res = res.FFT();
-    for(int k =0; k<=n; k++){
-      printf("Je passe dans la boucle \n");
-      res.tab[k] = std::conj(res.tab[k])/((complex<double>)n);
+    even.fft();
+    odd.fft();
+    int k = 0;
+    while(k <=  N -1 ){
+      complex<double> t = ((complex<double>)cexp(-I*2*PI*k/N))*odd.tab[k];
+      tab[k] = (even.tab[k] + t);
+      tab[k + N] = even.tab[k] -t;
+      k+= 1;
     }
-    return res;
+    this->tab = tab;
+    return *this;
   }
 }
 
+Dvector Dvector::conjugue(){
+  int n = this->size();
+  Dvector conjugu = Dvector(n);
+  int k = 0;
+  while(k<n){
+    conjugu.tab[k] = conj(tab[k]);
+    k +=1;
+  }
+  return conjugu;
+}
+
+Dvector Dvector::conjuguedivise(){
+  int n = this->size();
+  Dvector conjugu = Dvector(n);
+  int k = 0;
+  while(k<n){
+    conjugu.tab[k] = conj(tab[k]/((complex<double>)n));
+    k +=1;
+  }
+  return conjugu;
+}
+
+Dvector Dvector::ifft(){
+  int n = this->size();
+  if(n <= 1){
+    return *this;
+  }else{
+    Dvector nouveau = Dvector(n);
+    nouveau = this->conjugue();
+    nouveau.fft();
+    Dvector newf = nouveau.conjuguedivise();
+    return newf;
+  }
+}
+
+
+
 int main(){
-  Dvector v = Dvector();
+  Dvector v = Dvector(2);
   printf("La taille du vecteur v est %i \n ", v.size());
   printf("Je suis v \n");
   v.display(std::cout);
@@ -469,27 +499,33 @@ int main(){
   w /= v;
   printf("Oh je viens de me diviser par v\n");
   w.display(std::cout);
-  printf("Je suis y avant\n");
-  y.display(std::cout);
   y = 5 + w;
   printf("Oups on m'ajoute 5 \n");
   y.display(std::cout);
-  printf("Je suis w avant\n");
-  w.display(std::cout);
   w = w + w;
   printf("Je vais devenir grand \n");
   w.display(std::cout);
   printf("%i\n ", w == y);
-  // w.FFT();
-  // printf("Je suis la fft de f\n");
-  // w.display(std::cout);
-  Dvector ff = Dvector(6, 10);
+  complex<double> com = cexp(-I*4);
+  complex<double> com2 = cexp(-I*8);
+  printf("Mon complexe est %f, %f\n", com);
+  Dvector ffggt = Dvector(8, com);
+  Dvector ffw = Dvector(8,com2);
+  Dvector ff = ffggt + ffw;
+  printf("%i", ff.size());
   printf("Mon nouveau vecteur ff \n");
   ff.display(std::cout);
-  ff.FFT();
+  Dvector ffko = ff.conjugue();
+  printf("Mon nouveau vecteur ff \n");
+  ffko.display(std::cout);
+  Dvector ffl = ffko.conjugue();
+  printf("Mon nouveau vecteur ffL \n");
+  ffl.display(std::cout);
+  ff.fft();
   printf("J'ai subit une fft \n");
   ff.display(std::cout);
   printf("On a subit une ifft\n");
-  ff.ifft();
-  ff.display(std::cout);
+  Dvector gjg = ff.ifft();
+  gjg.display(std::cout);
+
 }
