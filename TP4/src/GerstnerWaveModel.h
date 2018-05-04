@@ -14,14 +14,14 @@
 #include <iostream>
 
 class GerstnerWaveModel : public WaveModel{
-    private :
+    private:
       int nb_ondes;
       std::vector<Dvector> Ki;  //vecteurs d'ondes
       Dvector Ai; //amplitudes
       Dvector wi; //frequences
       Dvector phii; //phases
 
-    public :
+    public:
       //constructeur
       GerstnerWaveModel(Dvector _direction, double _intensite);
       //GerstnerWaveModel(const GerstnerWaveModel& g);
