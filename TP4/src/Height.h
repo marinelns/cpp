@@ -1,5 +1,6 @@
 #include "Dvector.h"
 #include <complex.h>
+#include <assert.h>
 #ifndef HeightH
 #define HeightH
 
@@ -40,7 +41,7 @@ class Height{
     void setNx(double n_x);
     void setNy(double n_y);
     void setVector(Dvector vect);
-    double operator() (int off);
+    double& operator() (int off) const;
     //operateur d'affectation
     Height& operator=(const Height& h);
 

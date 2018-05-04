@@ -15,45 +15,37 @@ Dvector::Dvector(Dvector const& autre){
   for(int i = 0; i< taille; i++){
     tab[i] = autre.tab[i];
   }
-  cout<<"dans constructeur"<<endl;
+  cout <<"dans constructeur "<<endl;
 }
 
 
 Dvector::Dvector()
 {
-  int longueur = 0;
-  (complex<double>) *tab;
-  tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
+  tab = (double*) malloc(sizeof(double));
   this->tab = tab;
-  this->taille = longueur;
-  cout<<"dans constructeur"<<endl;
+  this->taille = 0;
 }
 
 Dvector::Dvector(int longueur, int valeur)
 {
-  tab = new double[longueur];
-  taille = longueur;
-  for(int i =0; i < longueur; i++){
+  tab = (double*) malloc(longueur * sizeof(double));
+  for(int i = 0; i < longueur; i++){
     tab[i] = valeur;
   }
   this->taille = longueur;
   this->tab = tab;
-  cout<<"dans constructeur"<<endl;
 }
 
 Dvector::Dvector(int longueur)
 {
-  (complex<double>) *tab;
-  tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
+  tab = (double*) malloc(longueur * sizeof(double));
   this->taille = longueur;
   this->tab = tab;
-  cout<<"dans constructeur"<<endl;
 }
 
 Dvector::~Dvector(){
   if(tab != NULL){
     delete[] tab;
-    cout<<"dans destructeur"<<endl;
   }
 }
 
@@ -114,15 +106,6 @@ Dvector &Dvector::operator=(const Dvector &v){
   }
 }
 
-// Dvector &Dvector::operator=(const Dvector &v){
-//   int dimension = v.taille;
-//   Dvector &Vecteur = *this;
-//   Vecteur.taille = dimension;
-//   for(int i = 0; i< dimension; i++){
-//     Vecteur.tab = &v.tab[i];
-//   }
-//   return *this;
-// }
 
 //Question 3
 
@@ -399,83 +382,6 @@ double Dvector::pdt_scalaire(Dvector w){
   }
 }
 
-<<<<<<< HEAD
-
-Dvector Dvector::fft(){
-  int n = this->taille;
-  int N = n/2;
-  Dvector odd;
-  Dvector even;
-  even.tab = ((complex<double>*) malloc(N * sizeof(complex<double>)));
-  even.taille = N;
-  odd.tab = ((complex<double>*) malloc(N * sizeof(complex<double>)));
-  odd.taille = N;
-  if(n%2 != 0 and n != 1){
-    std::cout<<"Erreur : la longueur n'est pas un multiple de 2"<<"\n";
-    throw 0;
-  }
-  if(n <= 1){
-    return *this;
-  }else{
-    int i = 0;
-    while(i < n){
-      even.tab[i/2] = tab[i];
-      odd.tab[i/2] = tab[i+1];
-      i += 2;
-    }
-    even.fft();
-    odd.fft();
-    int k = 0;
-    while(k <=  N -1 ){
-      complex<double> t = ((complex<double>)cexp(-I*2*PI*k/N))*odd.tab[k];
-      tab[k] = (even.tab[k] + t);
-      tab[k + N] = even.tab[k] -t;
-      k+= 1;
-    }
-    this->tab = tab;
-    return *this;
-  }
-}
-
-Dvector Dvector::conjugue(){
-  int n = this->size();
-  Dvector conjugu = Dvector(n);
-  int k = 0;
-  while(k<n){
-    conjugu.tab[k] = conj(tab[k]);
-    k +=1;
-  }
-  return conjugu;
-}
-
-Dvector Dvector::conjuguedivise(){
-  int n = this->size();
-  Dvector conjugu = Dvector(n);
-  int k = 0;
-  while(k<n){
-    conjugu.tab[k] = conj(tab[k]/((complex<double>)n));
-    k +=1;
-  }
-  return conjugu;
-}
-
-Dvector Dvector::ifft(){
-  int n = this->size();
-  if(n <= 1){
-    return *this;
-  }else{
-    Dvector nouveau = Dvector(n);
-    nouveau = this->conjugue();
-    nouveau.fft();
-    Dvector newf = nouveau.conjuguedivise();
-    return newf;
-  }
-}
-
-
-//
-=======
->>>>>>> 7f5f6407af0931d078ab6f880d798d44280ee967
 // int main(){
 //   Dvector v = Dvector(2);
 //   printf("La taille du vecteur v est %i \n ", v.size());

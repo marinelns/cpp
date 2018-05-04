@@ -83,7 +83,7 @@ Height& Height::operator = (const Height& h){
 }
 
 
-double& Height::operator() (int off) {
+double& Height::operator() (int off) const{
     return vect(off);
 }
 
@@ -96,7 +96,7 @@ std::ostream& operator << (std::ostream &out, const Height &h){
     out << std::endl;
   }
   for( int i =0; i < h.getNx();i++){
-    complex<double> n = i*h.getNy() + h.getNy() -1;
+    int n = i*h.getNy() + h.getNy() -1;
     out << i*h.getLx()/(h.getNx()-1) << "" << (h.getNy()-1)*h.getLy()/(h.getNy()-1) << "" << h(n) << std::endl;
   }
   return out;
