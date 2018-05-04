@@ -7,6 +7,7 @@ using namespace std;
 #include "Dvector.h"
 #include <sstream>
 #include <assert.h>
+#include <math.h>
 
 Dvector::Dvector(Dvector const& autre){
   int taillAutre = autre.taille;
@@ -380,6 +381,14 @@ double Dvector::pdt_scalaire(Dvector w){
     }
     return pdt;
   }
+}
+
+double norm(const Dvector &v){
+  double res = 0;
+  for (int i = 0; i < v.size(); i++){
+    res += pow(v(i), 2);
+  }
+  return sqrt(res);
 }
 
 // int main(){

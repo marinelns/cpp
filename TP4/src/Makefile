@@ -1,6 +1,6 @@
-PROG = Dvector Height PhilipsWaveModel
-INCLUDES =  Dvector.h Height.h PhilipsWaveModel.h
-OBJ = Dvector.o Height.o PhilipsWaveModel.o
+PROG = Dvector GerstnerWaveModel
+INCLUDES =  Dvector.h GerstnerWaveModel.h
+OBJ = Dvector.o GerstnerWaveModel.o
 CXX = g++
 CXXFLAGS = -Wall
 

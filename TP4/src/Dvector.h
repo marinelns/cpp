@@ -40,6 +40,8 @@ class Dvector{
 
     //calcule le produit scalaire entre 2 vecteurs
     double pdt_scalaire(Dvector w);
+
+
 };
 //Quesion 4
 Dvector operator+(const Dvector & v, const double & c);
@@ -56,4 +58,8 @@ Dvector operator-(const Dvector & v);
 //quesion 5
 std::ostream & operator << (std::ostream & Out, const Dvector & v);
 std::ostream & operator >> (std::ostream & Out, const Dvector & v);
+
+//calcule la norme d'un vecteurs
+double norm(const Dvector &v);
+
 #endif
