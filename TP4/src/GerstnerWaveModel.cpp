@@ -18,8 +18,8 @@ GerstnerWaveModel::GerstnerWaveModel(Dvector _direction, double _intensite):
     }
   }
 
-// GerstnerWaveModel::~GerstnerWaveModel(){
-// }
+ GerstnerWaveModel::~GerstnerWaveModel(){
+ }
 
  int main(){
    GerstnerWaveModel g = GerstnerWaveModel(Dvector(2), 6);
