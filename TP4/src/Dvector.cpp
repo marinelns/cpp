@@ -7,17 +7,17 @@ using namespace std;
 #include "Dvector.h"
 #include <sstream>
 #include <assert.h>
-const double PI = 3.14159265359;
 
 Dvector::Dvector(Dvector const& autre){
   int taillAutre = autre.taille;
-  tab = new complex<double>[taillAutre];
+  tab = new double[taillAutre];
   taille = taillAutre;
   for(int i = 0; i< taille; i++){
     tab[i] = autre.tab[i];
   }
   cout<<"dans constructeur"<<endl;
 }
+
 
 Dvector::Dvector()
 {
@@ -29,11 +29,11 @@ Dvector::Dvector()
   cout<<"dans constructeur"<<endl;
 }
 
-Dvector::Dvector(int longueur, complex<double> valeur)
+Dvector::Dvector(int longueur, int valeur)
 {
-  (complex<double>) *tab;
-  tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
-  for(int i = 0; i < longueur; i++){
+  tab = new double[longueur];
+  taille = longueur;
+  for(int i =0; i < longueur; i++){
     tab[i] = valeur;
   }
   this->taille = longueur;
@@ -89,7 +89,7 @@ Dvector::Dvector(std::string fichier){
 
 //Question 1
 //operateur d'accession a un element du vecteur
-complex<double>& Dvector::operator()(int i)const{
+double& Dvector::operator()(int i)const{
   if (i <= taille){
     return tab[i];
   }
@@ -108,7 +108,7 @@ Dvector &Dvector::operator=(const Dvector &v){
   else{
     delete[] tab;
     taille = v.taille;
-    tab = new complex<double>[taille];
+    tab = new double[taille];
     memcpy(tab, v.tab, taille*sizeof(double));
     return *this;
   }
@@ -182,7 +182,7 @@ Dvector & Dvector::operator*=(const double & c){
 Dvector & Dvector::operator/=(const Dvector & v){
   Dvector &res = *this;
   for(int i = 0; i < taille; i++){
-    if (v(i)==((complex<double>)0)){
+    if (v(i)==0){
       std::cout<<"Erreur : division par 0"<<"\n";
       throw 0;
     }
@@ -280,7 +280,7 @@ Dvector operator/(const Dvector & v, const double & c){
     throw 0;
   }else{
     for (int i =0; i < dimension; i++){
-      if(v(i) == ((complex<double>)0)){
+      if(v(i) == 0){
         std::cout<<"Impossible de diviser par le vecteur nul"<<"\n";
         throw 0;
       }
@@ -343,13 +343,13 @@ std::ostream & operator << (std::ostream & Out, const Dvector & v){
   return Out;
 }
 
-// //operateur >>
-// std::ostream & operator >> (std::ostream & In, const Dvector & v){
-//   for (int i =0; i<v.size(); i++){
-//     In>>v(i);
-//   }
-//   return In;
-// }
+//operateur >>
+std::ostream & operator >> (std::ostream & In, const Dvector & v){
+  for (int i =0; i<v.size(); i++){
+    In>>v(i);
+  }
+  return In;
+}
 
 //operateur de test d'egalite ==
 bool Dvector::operator ==(const Dvector & v){
@@ -386,12 +386,12 @@ void Dvector::resize(const int & dimension, const double & c){
   *this = res;
 }
 
-complex<double> Dvector::pdt_scalaire(Dvector w){
+double Dvector::pdt_scalaire(Dvector w){
   if (this->size() != w.size()){
     return 0;
   }
   else{
-    complex<double> pdt = 0;
+    double pdt = 0;
     for (int i = 0; i < w.size(); i++){
       pdt += (*this)(i)*w(i);
     }
@@ -399,6 +399,7 @@ complex<double> Dvector::pdt_scalaire(Dvector w){
   }
 }
 
+<<<<<<< HEAD
 
 Dvector Dvector::fft(){
   int n = this->taille;
@@ -473,6 +474,8 @@ Dvector Dvector::ifft(){
 
 
 //
+=======
+>>>>>>> 7f5f6407af0931d078ab6f880d798d44280ee967
 // int main(){
 //   Dvector v = Dvector(2);
 //   printf("La taille du vecteur v est %i \n ", v.size());
@@ -511,26 +514,5 @@ Dvector Dvector::ifft(){
 //   printf("Je vais devenir grand \n");
 //   w.display(std::cout);
 //   printf("%i\n ", w == y);
-//   complex<double> com = cexp(-I*4);
-//   complex<double> com2 = cexp(-I*8);
-//   printf("Mon complexe est %f, %f\n", com);
-//   Dvector ffggt = Dvector(8, com);
-//   Dvector ffw = Dvector(8,com2);
-//   Dvector ff = ffggt + ffw;
-//   printf("%i", ff.size());
-//   printf("Mon nouveau vecteur ff \n");
-//   ff.display(std::cout);
-//   Dvector ffko = ff.conjugue();
-//   printf("Mon nouveau vecteur ff \n");
-//   ffko.display(std::cout);
-//   Dvector ffl = ffko.conjugue();
-//   printf("Mon nouveau vecteur ffL \n");
-//   ffl.display(std::cout);
-//   ff.fft();
-//   printf("J'ai subit une fft \n");
-//   ff.display(std::cout);
-//   printf("On a subit une ifft\n");
-//   Dvector gjg = ff.ifft();
-//   gjg.display(std::cout);
 //
 // }

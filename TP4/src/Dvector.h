@@ -6,24 +6,15 @@
 #include <stdlib.h>
 using namespace std;
 #include <fstream>
-#include <complex>
-#include <valarray>
-#include <math.h>
-#include <complex.h>
-#include <sstream>
-#include <assert.h>
-#include <fstream>
-
-
 
 class Dvector{
   private:
+    double *tab;
     int taille;
 
   public:
-    complex<double> *tab;
     Dvector();
-    Dvector(int longueur, complex<double> valeur);
+    Dvector(int longueur, int valeur);
     Dvector(int longueur);
     Dvector(Dvector const& autre);
     Dvector(std::string fichier);
@@ -31,7 +22,7 @@ class Dvector{
     void display(std::ostream& str);
     int size() const;
     void fillRandomly();
-    complex<double> & operator()(int i)const;
+    double & operator()(int i)const;
     Dvector & operator=(const Dvector & v);
     //Question 3
     Dvector & operator+=(const Dvector &v);
@@ -48,14 +39,8 @@ class Dvector{
     void resize(const int & taille, const double & c);
 
     //calcule le produit scalaire entre 2 vecteurs
-    complex<double> pdt_scalaire(Dvector w);
-
-    //LAB4
-    Dvector fft();
-    Dvector conjugue();
-    Dvector conjuguedivise();
-    Dvector ifft();
-  };
+    double pdt_scalaire(Dvector w);
+};
 //Quesion 4
 Dvector operator+(const Dvector & v, const double & c);
 Dvector operator+(const Dvector & v, const Dvector & w);

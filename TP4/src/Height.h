@@ -34,10 +34,15 @@ class Height{
     double getNx() const;
     //Accesseur a ny
     double getNy() const;
+
+    void setLx(double l_x);
+    void setLy(double l_y);
+    void setNx(double n_x);
+    void setNy(double n_y);
+    void setVector(Dvector vect);
+    double operator() (int off);
     //operateur d'affectation
     Height& operator=(const Height& h);
-    //operateur d'acces a la hauteur
-    complex<double>& operator() (double Lx, double Ly);
 
 };
 
