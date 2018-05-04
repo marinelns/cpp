@@ -34,6 +34,8 @@ class GerstnerWaveModel : public WaveModel{
       Dvector getWi() {return wi;}
       Dvector getPhii() {return phii;}
 
+      double operator()(double x, double y, double t);
+
 };
 
 #endif

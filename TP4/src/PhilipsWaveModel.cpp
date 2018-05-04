@@ -64,3 +64,7 @@ double PhilipsWaveModel::houle(double kx, double ky){
   double retour = A*exponentielle*prod_scal/(kx*kx+ky*ky);
   return retour;
 }
+
+double PhilipsWaveModel::operator()(double x, double y, double t){
+  return 0;
+}

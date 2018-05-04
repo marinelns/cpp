@@ -32,6 +32,7 @@ class PhilipsWaveModel : public WaveModel{
     ~PhilipsWaveModel();
     PhilipsWaveModel(Dvector vent_direction, double intensite);
 
+    double operator()(double x, double y, double t);
     Dvector operator()(double t);
     double operator()(double x, double y, double t) const;
     double houle(double kx, double ky);

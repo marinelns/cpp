@@ -18,6 +18,16 @@ GerstnerWaveModel::GerstnerWaveModel(Dvector _direction, double _intensite):
     }
   }
 
+  double GerstnerWaveModel::operator()(double x, double y, double t){
+    GerstnerWave* waves[n];
+    double somme = 0;
+    for(int i=0; i>n; i++){
+      waves[i] = new GerstnerWave(Ai(i), wi(i), Ki[i], phii(i));
+      somme += (*waves[i])(x,y,t);
+    }
+    return somme;
+  }
+
 // GerstnerWaveModel::~GerstnerWaveModel(){
 // }
 

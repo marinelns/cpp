@@ -25,8 +25,9 @@ void Ocean::setHauteur(double haut){
 void Ocean::compute(){
   for(int i =0; i < Nx; i++){
     for(int j=0; j < Ny; j++){
-
+      this->hauteur(i*Ny+j) = (*model)(i,j,t);
     }
   }
 }
+
 void gl_vertices(double hauteur_initiale);
