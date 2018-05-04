@@ -399,7 +399,7 @@ double Dvector::pdt_scalaire(Dvector w){
   }
 }
 
-<<<<<<< HEAD
+
 
 Dvector Dvector::fft(){
   int n = this->taille;
@@ -473,9 +473,7 @@ Dvector Dvector::ifft(){
 }
 
 
-//
-=======
->>>>>>> 7f5f6407af0931d078ab6f880d798d44280ee967
+
 // int main(){
 //   Dvector v = Dvector(2);
 //   printf("La taille du vecteur v est %i \n ", v.size());

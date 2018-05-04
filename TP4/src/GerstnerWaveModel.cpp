@@ -22,7 +22,7 @@ Dvector getWi() {return wi;}
 Dvector getPhii() {return phii;}
 
  // int main(){
- //   GerstnerWaveModel tab = GerstnerWaveModel();
+ //    GerstnerWaveModel tab = GerstnerWaveModel();
  //   GerstnerWave g = GerstnerWave(5.9, 3, Dvector(2), 6);
  //   printf("phase %f\n", g.getPhase());
  //   printf("phase %f \n", tab.getTab()[0].getPhase());
