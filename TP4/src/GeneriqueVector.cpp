@@ -9,7 +9,7 @@ using namespace std;
 #include <assert.h>
 const double PI = 3.14159265359;
 
-Dvector::Dvector(Dvector const& autre){
+GeneriqueVector::GeneriqueVector(GeneriqueVector const& autre){
   int taillAutre = autre.taille;
   tab = new complex<double>[taillAutre];
   taille = taillAutre;
@@ -18,7 +18,7 @@ Dvector::Dvector(Dvector const& autre){
   }
 }
 
-Dvector::Dvector()
+GeneriqueVector::GeneriqueVector()
 {
   int longueur = 0;
   (complex<double>) *tab;
@@ -27,7 +27,7 @@ Dvector::Dvector()
   this->taille = longueur;
 }
 
-Dvector::Dvector(int longueur, complex<double> valeur)
+GeneriqueVector::GeneriqueVector(int longueur, complex<double> valeur)
 {
   (complex<double>) *tab;
   tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
@@ -38,7 +38,7 @@ Dvector::Dvector(int longueur, complex<double> valeur)
   this->tab = tab;
 }
 
-Dvector::Dvector(int longueur)
+GeneriqueVector::GeneriqueVector(int longueur)
 {
   (complex<double>) *tab;
   tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
@@ -46,34 +46,34 @@ Dvector::Dvector(int longueur)
   this->tab = tab;
 }
 
-Dvector::~Dvector(){
+GeneriqueVector::~GeneriqueVector(){
   if(tab != NULL){
     delete[] tab;
   }
 }
 
-void Dvector::display(std::ostream& str){
+void GeneriqueVector::display(std::ostream& str){
   for(int i=0; i< taille ; i++){
     str << tab[i];
     str << "\n";
   }
 }
 
-int Dvector::size() const{
+int GeneriqueVector::size() const{
   return this->taille;
 }
 
-void Dvector::fillRandomly(){
+void GeneriqueVector::fillRandomly(){
   for(int i = 0; i<taille; i++){
     tab[i] = rand()/(float)RAND_MAX;
   }
 }
 
 //Question 3
-Dvector::Dvector(std::string fichier){
+GeneriqueVector::GeneriqueVector(std::string fichier){
   std::ifstream Fichier(fichier.c_str());
   if(Fichier.fail()){
-    *this = Dvector();
+    *this = GeneriqueVector();
     return;
   }
 }
@@ -84,7 +84,7 @@ Dvector::Dvector(std::string fichier){
 
 //Question 1
 //operateur d'accession a un element du vecteur
-complex<double>& Dvector::operator()(int i)const{
+complex<double>& GeneriqueVector::operator()(int i)const{
   if (i <= taille){
     return tab[i];
   }
@@ -96,7 +96,7 @@ complex<double>& Dvector::operator()(int i)const{
 
 //Question 2
 //operateur d'affectation = avec la fonction memcpy
-Dvector &Dvector::operator=(const Dvector &v){
+GeneriqueVector &GeneriqueVector::operator=(const GeneriqueVector &v){
   if (this==&v){
     return *this;
   }
@@ -109,9 +109,9 @@ Dvector &Dvector::operator=(const Dvector &v){
   }
 }
 
-// Dvector &Dvector::operator=(const Dvector &v){
+// GeneriqueVector &GeneriqueVector::operator=(const GeneriqueVector &v){
 //   int dimension = v.taille;
-//   Dvector &Vecteur = *this;
+//   GeneriqueVector &Vecteur = *this;
 //   Vecteur.taille = dimension;
 //   for(int i = 0; i< dimension; i++){
 //     Vecteur.tab = &v.tab[i];
@@ -122,8 +122,8 @@ Dvector &Dvector::operator=(const Dvector &v){
 //Question 3
 
 //operateur += avec un vecteur
-Dvector & Dvector::operator+=(const Dvector & v){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator+=(const GeneriqueVector & v){
+  GeneriqueVector &res = *this;
   for(int i = 0; i < taille; i++){
     res(i) = res(i) + v(i);
   }
@@ -131,8 +131,8 @@ Dvector & Dvector::operator+=(const Dvector & v){
 }
 
 //operateur += avec un reel
-Dvector & Dvector::operator+=(const double & c){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator+=(const double & c){
+  GeneriqueVector &res = *this;
   for(int i = 0; i < taille; i++){
     res(i) = res(i) + c;
   }
@@ -140,16 +140,16 @@ Dvector & Dvector::operator+=(const double & c){
 }
 
 //operateur -= avec un vecteur
-Dvector & Dvector::operator-=(const Dvector & v){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator-=(const GeneriqueVector & v){
+  GeneriqueVector &res = *this;
   for(int i = 0; i < taille; i++){
     res(i) = res(i) - v(i);
   }
   return res;
 }
 //operateur -= avec un reel
-Dvector & Dvector::operator-=(const double & c){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator-=(const double & c){
+  GeneriqueVector &res = *this;
   for(int i = 0; i < taille; i++){
     res(i) = res(i) - c;
   }
@@ -157,16 +157,16 @@ Dvector & Dvector::operator-=(const double & c){
 }
 
 //operateur *= avec un vecteur
-Dvector & Dvector::operator*=(const Dvector & v){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator*=(const GeneriqueVector & v){
+  GeneriqueVector &res = *this;
   for(int i = 0; i < taille; i++){
     res(i) = res(i) * v(i);
   }
   return res;
 }
 //operateur *= avec un reel
-Dvector & Dvector::operator*=(const double & c){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator*=(const double & c){
+  GeneriqueVector &res = *this;
   for(int i = 0; i < taille; i++){
     res(i) = res(i) * c;
   }
@@ -174,8 +174,8 @@ Dvector & Dvector::operator*=(const double & c){
 }
 
 //operateur /= avec un vecteur
-Dvector & Dvector::operator/=(const Dvector & v){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator/=(const GeneriqueVector & v){
+  GeneriqueVector &res = *this;
   for(int i = 0; i < taille; i++){
     if (v(i)==((complex<double>)0)){
       std::cout<<"Erreur : division par 0"<<"\n";
@@ -189,8 +189,8 @@ Dvector & Dvector::operator/=(const Dvector & v){
 }
 
 //operateur /= avec un reel
-Dvector & Dvector::operator/=(const double & c){
-  Dvector &res = *this;
+GeneriqueVector & GeneriqueVector::operator/=(const double & c){
+  GeneriqueVector &res = *this;
   if (c==0){
     std::cout<<"Erreur : division par 0"<<"\n";
     throw 0;
@@ -205,8 +205,8 @@ Dvector & Dvector::operator/=(const double & c){
 
 //question 4:
 //operateur + externe avec un reel
-Dvector operator+(const Dvector & v, const double & c){
-  Dvector v1(v.size());
+GeneriqueVector operator+(const GeneriqueVector & v, const double & c){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
     v1(i) = v(i) + c;
@@ -214,8 +214,8 @@ Dvector operator+(const Dvector & v, const double & c){
   return v1;
 }
 
-Dvector operator+(const double & c, const Dvector & v){
-  Dvector v1(v.size());
+GeneriqueVector operator+(const double & c, const GeneriqueVector & v){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
     v1(i) = v(i) + c;
@@ -224,20 +224,20 @@ Dvector operator+(const double & c, const Dvector & v){
 }
 
 //operateur + externe avec un vecteur
-Dvector operator+(const Dvector & v, const Dvector & w){
+GeneriqueVector operator+(const GeneriqueVector & v, const GeneriqueVector & w){
   if(v.size() != w.size()){
     std::cout<<"Impossible d'additionner deux vecteurs de taille différentes"<<"\n";
     throw 0;
   }else{
-    Dvector res(v);
+    GeneriqueVector res(v);
     res += w;
     return res;
   }
 }
 
 //operateur - externe avec un reel
-Dvector operator-(const Dvector & v, const double & c){
-  Dvector v1(v.size());
+GeneriqueVector operator-(const GeneriqueVector & v, const double & c){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
     v1(i) = v(i) - c;
@@ -245,8 +245,8 @@ Dvector operator-(const Dvector & v, const double & c){
   return v1;
 }
 
-Dvector operator-(const double & c, const Dvector & v){
-  Dvector v1(v.size());
+GeneriqueVector operator-(const double & c, const GeneriqueVector & v){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
     v1(i) = v(i) - c;
@@ -255,20 +255,20 @@ Dvector operator-(const double & c, const Dvector & v){
 }
 
 //operateur - externe avec un vecteur
-Dvector operator-(const Dvector & v, const Dvector & w){
+GeneriqueVector operator-(const GeneriqueVector & v, const GeneriqueVector & w){
   if(v.size() != w.size()){
     std::cout<<"Impossible d'additionner deux vecteurs de taille différentes"<<"\n";
     throw 0;
   }else{
-    Dvector res(v);
+    GeneriqueVector res(v);
     res -= w;
     return res;
   }
 }
 
 //operateur / externe avec un reel
-Dvector operator/(const Dvector & v, const double & c){
-  Dvector v1(v.size());
+GeneriqueVector operator/(const GeneriqueVector & v, const double & c){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   if(dimension == 0){
     std::cout<<"Impossible de diviser par le vecteur nul"<<"\n";
@@ -286,8 +286,8 @@ Dvector operator/(const Dvector & v, const double & c){
 
 }
 
-Dvector operator/(const double & c, const Dvector & v){
-  Dvector v1(v.size());
+GeneriqueVector operator/(const double & c, const GeneriqueVector & v){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   if(c == 0){
     std::cout<<"Impossible de diviser par le vecteur nul"<<"\n";
@@ -301,8 +301,8 @@ Dvector operator/(const double & c, const Dvector & v){
 }
 
 //operateur * externe avec un reel
-Dvector operator*(const Dvector & v, const double & c){
-  Dvector v1(v.size());
+GeneriqueVector operator*(const GeneriqueVector & v, const double & c){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
     v1(i) = c * v(i);
@@ -310,8 +310,8 @@ Dvector operator*(const Dvector & v, const double & c){
   return v1;
 }
 
-Dvector operator*(const double & c, const Dvector & v){
-  Dvector v1(v.size());
+GeneriqueVector operator*(const double & c, const GeneriqueVector & v){
+  GeneriqueVector v1(v.size());
   int dimension = v.size();
   for (int i =0; i < dimension; i++){
     v1(i) = c * v(i);
@@ -320,8 +320,8 @@ Dvector operator*(const double & c, const Dvector & v){
 }
 
 //operateur - unaire
-Dvector operator-(const Dvector & v){
-  Dvector res(v.size());
+GeneriqueVector operator-(const GeneriqueVector & v){
+  GeneriqueVector res(v.size());
   for (int i = 0; i<v.size(); i++){
     res(i)=-v(i);
   }
@@ -329,8 +329,8 @@ Dvector operator-(const Dvector & v){
 }
 
 //operateur <<
-std::ostream & operator << (std::ostream & Out, const Dvector & v){
-  Out<<"Dvector : ";
+std::ostream & operator << (std::ostream & Out, const GeneriqueVector & v){
+  Out<<"GeneriqueVector : ";
   for (int i =0; i<v.size(); i++){
     Out<<v(i)<<" ";
   }
@@ -339,7 +339,7 @@ std::ostream & operator << (std::ostream & Out, const Dvector & v){
 }
 
 // //operateur >>
-// std::ostream & operator >> (std::ostream & In, const Dvector & v){
+// std::ostream & operator >> (std::ostream & In, const GeneriqueVector & v){
 //   for (int i =0; i<v.size(); i++){
 //     In>>v(i);
 //   }
@@ -347,7 +347,7 @@ std::ostream & operator << (std::ostream & Out, const Dvector & v){
 // }
 
 //operateur de test d'egalite ==
-bool Dvector::operator ==(const Dvector & v){
+bool GeneriqueVector::operator ==(const GeneriqueVector & v){
   if (taille != v.size()){
     return false;
   }
@@ -363,8 +363,8 @@ bool Dvector::operator ==(const Dvector & v){
 
 //methode pour modifier la taille du vecteur et remplit
 //le vecteur avec le reel c si le vecteur est augmenté
-void Dvector::resize(const int & dimension, const double & c){
-  Dvector res(dimension);
+void GeneriqueVector::resize(const int & dimension, const double & c){
+  GeneriqueVector res(dimension);
   if (dimension > taille){
     for (int i = 0; i<taille; i++){
       res.tab[i] = tab[i];
@@ -381,7 +381,7 @@ void Dvector::resize(const int & dimension, const double & c){
   *this = res;
 }
 
-complex<double> Dvector::pdt_scalaire(Dvector w){
+complex<double> GeneriqueVector::pdt_scalaire(GeneriqueVector w){
   if (this->size() != w.size()){
     return 0;
   }
@@ -395,11 +395,11 @@ complex<double> Dvector::pdt_scalaire(Dvector w){
 }
 
 
-Dvector Dvector::fft(){
+GeneriqueVector GeneriqueVector::fft(){
   int n = this->taille;
   int N = n/2;
-  Dvector odd;
-  Dvector even;
+  GeneriqueVector odd;
+  GeneriqueVector even;
   even.tab = ((complex<double>*) malloc(N * sizeof(complex<double>)));
   even.taille = N;
   odd.tab = ((complex<double>*) malloc(N * sizeof(complex<double>)));
@@ -431,9 +431,9 @@ Dvector Dvector::fft(){
   }
 }
 
-Dvector Dvector::conjugue(){
+GeneriqueVector GeneriqueVector::conjugue(){
   int n = this->size();
-  Dvector conjugu = Dvector(n);
+  GeneriqueVector conjugu = GeneriqueVector(n);
   int k = 0;
   while(k<n){
     conjugu.tab[k] = conj(tab[k]);
@@ -442,9 +442,9 @@ Dvector Dvector::conjugue(){
   return conjugu;
 }
 
-Dvector Dvector::conjuguedivise(){
+GeneriqueVector GeneriqueVector::conjuguedivise(){
   int n = this->size();
-  Dvector conjugu = Dvector(n);
+  GeneriqueVector conjugu = GeneriqueVector(n);
   int k = 0;
   while(k<n){
     conjugu.tab[k] = conj(tab[k]/((complex<double>)n));
@@ -453,15 +453,15 @@ Dvector Dvector::conjuguedivise(){
   return conjugu;
 }
 
-Dvector Dvector::ifft(){
+GeneriqueVector GeneriqueVector::ifft(){
   int n = this->size();
   if(n <= 1){
     return *this;
   }else{
-    Dvector nouveau = Dvector(n);
+    GeneriqueVector nouveau = GeneriqueVector(n);
     nouveau = this->conjugue();
     nouveau.fft();
-    Dvector newf = nouveau.conjuguedivise();
+    GeneriqueVector newf = nouveau.conjuguedivise();
     return newf;
   }
 }
@@ -469,16 +469,16 @@ Dvector Dvector::ifft(){
 
 //
 // int main(){
-//   Dvector v = Dvector(2);
+//   GeneriqueVector v = GeneriqueVector(2);
 //   printf("La taille du vecteur v est %i \n ", v.size());
 //   printf("Je suis v \n");
 //   v.display(std::cout);
 //   v.fillRandomly();
 //   v.display(std::cout);
-//   Dvector y = Dvector(v);
+//   GeneriqueVector y = GeneriqueVector(v);
 //   printf("Je suis y \n");
 //   y.display(std::cout);
-//   Dvector w = Dvector(3);
+//   GeneriqueVector w = GeneriqueVector(3);
 //   printf("Je suis w \n" );
 //   w.display(std::cout);
 //   w = y;
@@ -509,23 +509,23 @@ Dvector Dvector::ifft(){
 //   complex<double> com = cexp(-I*4);
 //   complex<double> com2 = cexp(-I*8);
 //   printf("Mon complexe est %f, %f\n", com);
-//   Dvector ffggt = Dvector(8, com);
-//   Dvector ffw = Dvector(8,com2);
-//   Dvector ff = ffggt + ffw;
+//   GeneriqueVector ffggt = GeneriqueVector(8, com);
+//   GeneriqueVector ffw = GeneriqueVector(8,com2);
+//   GeneriqueVector ff = ffggt + ffw;
 //   printf("%i", ff.size());
 //   printf("Mon nouveau vecteur ff \n");
 //   ff.display(std::cout);
-//   Dvector ffko = ff.conjugue();
+//   GeneriqueVector ffko = ff.conjugue();
 //   printf("Mon nouveau vecteur ff \n");
 //   ffko.display(std::cout);
-//   Dvector ffl = ffko.conjugue();
+//   GeneriqueVector ffl = ffko.conjugue();
 //   printf("Mon nouveau vecteur ffL \n");
 //   ffl.display(std::cout);
 //   ff.fft();
 //   printf("J'ai subit une fft \n");
 //   ff.display(std::cout);
 //   printf("On a subit une ifft\n");
-//   Dvector gjg = ff.ifft();
+//   GeneriqueVector gjg = ff.ifft();
 //   gjg.display(std::cout);
 //
 // }
