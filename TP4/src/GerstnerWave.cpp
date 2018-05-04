@@ -1,4 +1,5 @@
 #include "GerstnerWave.h"
+#include <vector>
 
 
 GerstnerWave::GerstnerWave(double ampl, double phas, Dvector dir, double freq){

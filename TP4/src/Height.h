@@ -1,6 +1,7 @@
 #include "Dvector.h"
 #include <complex.h>
 #include <assert.h>
+#include <fstream>
 #ifndef HeightH
 #define HeightH
 

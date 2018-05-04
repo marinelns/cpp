@@ -13,6 +13,7 @@ using namespace std;
 #include <sstream>
 #include <assert.h>
 #include <fstream>
+const double PI = 3.14159265359;
 
 
 

@@ -7,7 +7,7 @@ using namespace std;
 #include "GeneriqueVector.h"
 #include <sstream>
 #include <assert.h>
-const double PI = 3.14159265359;
+
 
 GeneriqueVector::GeneriqueVector(GeneriqueVector const& autre){
   int taillAutre = autre.taille;
