@@ -101,9 +101,9 @@ std::ostream& operator << (std::ostream &out, const Height &h){
   }
   return out;
 }
-
-
-int main(){
-  Height h = Height(2,2,2,2);
-  std::cout << h << std::endl;
-}
+// 
+//
+// int main(){
+//   Height h = Height(2,2,2,2);
+//   std::cout << h << std::endl;
+// }
