@@ -14,8 +14,12 @@ double loinormal(double mu, double sigma){
 }
 
 
-PhilipsWaveModel::PhilipsWaveModel(Dvector vent_direction, double intensite):
-WaveModel(vent_direction, 0.0f, intensite, 10.0f, 10.0f){
+PhilipsWaveModel::PhilipsWaveModel(Dvector vent_direction, double intensite){
+  this->_direction = vent_direction;
+  this->_alignement = 0.0f;
+  this->_intensite = intensite;
+  this->_longueur = 10.0f;
+  this->_ajustement = 10.0f;
   N = 256;
   M = 256;
   double ksi_r = loinormal(0,1);
@@ -35,9 +39,28 @@ Dvector PhilipsWaveModel::operator() (double t){
     for(int m = -M/2; m< M/2; m++){
       int kx = PIDOUBLE*n/N;
       int ky = PIDOUBLE*m/M;
-      //complex<double> premiere_part = cexp(sqrt(9.81*sqrt(kx**2+ky**2)*t))*(1/sqrt(2))*ksi*(sqrt(houle(kx, ky)));
+      complex<double> premiere_part = cexp(sqrt(sqrt(kx*kx+ky*ky)*t)*PIDOUBLE)*(1/sqrt(2));
+      premiere_part *= (ksi)*(sqrt(houle(kx, ky)));
 
-      //htilde(k++) =
+      complex<double> seconde_part = cexp(-sqrt(sqrt(kx*kx+ky*ky)*t)*PIDOUBLE)*(1/sqrt(2));
+      seconde_part *= conj(ksi)*(sqrt(houle(kx, ky)));
+
+      htilde(l++) = premiere_part + seconde_part;
     }
   }
+
+  GeneriqueVector vect = GeneriqueVector(taille);
+  vect = htilde.ifft();
+  Dvector vector = Dvector(taille);
+  for(int i = 0; i<taille; i++){
+    vector(i) = real(vect(i));
+  }
+  return vector;
+}
+
+double PhilipsWaveModel::houle(double kx, double ky){
+  double prod_scal = kx*_direction(1) + ky*_direction(2);
+  double exponentielle = exp(-1/((kx*kx + ky*ky)*(_intensite*_intensite)));
+  double retour = A*exponentielle*prod_scal/(kx*kx+ky*ky);
+  return retour;
 }

@@ -24,7 +24,9 @@ WaveModel::WaveModel(const WaveModel & w){
   this->_ajustement = w._longueur;
 }
 
-WaveModel::~WaveModel(){}
+WaveModel::~WaveModel(){
+  
+}
 
 WaveModel& WaveModel::operator = (const WaveModel& w){
   this->_direction = Dvector();
@@ -42,7 +44,7 @@ double WaveModel::getIntensite() const {return _intensite;}
 double WaveModel::getLongueur() const {return _longueur;}
 double WaveModel::getAjustement() const {return _ajustement;}
 
-// 
+//
 // int main(){
 //   Dvector v = Dvector(2,1);
 //   WaveModel w = WaveModel(v, v, 3, 5, 2);

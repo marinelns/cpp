@@ -1,5 +1,5 @@
-#ifndef PhilipsWaveModelH
-#define PhilipsWaveModelH
+#ifndef PhilipsWaveModel_HPP
+#define PhilipsWaveModel_HPP
 
 #include "Dvector.h"
 #include "WaveModel.h"
