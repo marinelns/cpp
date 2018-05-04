@@ -13,7 +13,6 @@
 #include <iostream>
 
 class PhilipsWaveModel : public WaveModel{
-  
 };
 
 #endif

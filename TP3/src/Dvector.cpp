@@ -15,6 +15,7 @@ Dvector::Dvector(Dvector const& autre){
   for(int i = 0; i< taille; i++){
     tab[i] = autre.tab[i];
   }
+  cout <<"dans constructeur "<<endl;
 }
 
 
@@ -26,6 +27,7 @@ Dvector::Dvector()
   for(int i = 0; i< longueur; i++){
     tab[i] = 0;
   }
+  cout <<"dans constructeur "<<endl;
 }
 
 Dvector::Dvector(int longueur, int valeur)
@@ -35,6 +37,7 @@ Dvector::Dvector(int longueur, int valeur)
   for(int i =0; i < longueur; i++){
     tab[i] = valeur;
   }
+  cout <<"dans constructeur "<<endl;
 }
 
 Dvector::Dvector(int longueur)
@@ -44,12 +47,14 @@ Dvector::Dvector(int longueur)
   for(int i = 0; i< longueur; i++){
     tab[i] = 0;
   }
+  cout <<"dans constructeur "<<endl;
 }
 
 Dvector::~Dvector(){
   if(tab != NULL){
     delete[] tab;
   }
+  cout <<"dans constructeur "<<endl;
 }
 
 void Dvector::display(std::ostream& str){

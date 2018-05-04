@@ -16,6 +16,7 @@ Dvector::Dvector(Dvector const& autre){
   for(int i = 0; i< taille; i++){
     tab[i] = autre.tab[i];
   }
+  cout<<"dans constructeur"<<endl;
 }
 
 Dvector::Dvector()
@@ -25,6 +26,7 @@ Dvector::Dvector()
   tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
   this->tab = tab;
   this->taille = longueur;
+  cout<<"dans constructeur"<<endl;
 }
 
 Dvector::Dvector(int longueur, complex<double> valeur)
@@ -36,6 +38,7 @@ Dvector::Dvector(int longueur, complex<double> valeur)
   }
   this->taille = longueur;
   this->tab = tab;
+  cout<<"dans constructeur"<<endl;
 }
 
 Dvector::Dvector(int longueur)
@@ -44,11 +47,13 @@ Dvector::Dvector(int longueur)
   tab = ((complex<double>*) malloc(longueur * sizeof(complex<double>)));
   this->taille = longueur;
   this->tab = tab;
+  cout<<"dans constructeur"<<endl;
 }
 
 Dvector::~Dvector(){
   if(tab != NULL){
     delete[] tab;
+    cout<<"dans destructeur"<<endl;
   }
 }
 
@@ -467,7 +472,7 @@ Dvector Dvector::ifft(){
 }
 
 
-// 
+//
 // int main(){
 //   Dvector v = Dvector(2);
 //   printf("La taille du vecteur v est %i \n ", v.size());

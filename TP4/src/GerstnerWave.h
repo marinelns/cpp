@@ -14,8 +14,6 @@ class GerstnerWave{
     double _frequence;
 
   public :
-    /*constructeur par défaut*/
-    GerstnerWave();
     /*constructeur avec initialisation des paramètres*/
     GerstnerWave(double ampl, double phas, Dvector dir, double freq);
     /*constructeur par copie*/

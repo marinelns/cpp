@@ -13,26 +13,26 @@
 #include <iostream>
 
 class GerstnerWaveModel : public WaveModel{
-    protected :
+    private :
       int nb_ondes;
-      vector<GerstnerWave> ondes;
+      std::vector<Dvector> Ki;  //vecteurs d'ondes
+      Dvector Ai; //amplitudes
+      Dvector wi; //frequences
+      Dvector phii; //phases
 
     public :
-      //constructeur par defaut
-      GerstnerWaveModel();
-
-      //constructeur par copie
+      //constructeur
+      GerstnerWaveModel(Dvector _direction, double _intensite);
       //GerstnerWaveModel(const GerstnerWaveModel& g);
-
       ~GerstnerWaveModel();
 
-      int size() const;
+      //getter
+      int getNb_ondes();
+      std::vector<Dvector> getKi();
+      Dvector getAi();
+      Dvector getWi();
+      Dvector getPhii();
 
-      vector<GerstnerWave> getTab();
-
-      int getSize() const;
-
-      GerstnerWaveModel add(GerstnerWave nouveau);
 };
 
 #endif
