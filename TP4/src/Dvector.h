@@ -43,6 +43,7 @@ class Dvector{
 
 
 };
+
 //Quesion 4
 Dvector operator+(const Dvector & v, const double & c);
 Dvector operator+(const Dvector & v, const Dvector & w);

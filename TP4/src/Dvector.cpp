@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 using namespace std;
+#include <cstdlib>
 #include <fstream>
 #include "Dvector.h"
 #include <sstream>
@@ -16,7 +17,6 @@ Dvector::Dvector(Dvector const& autre){
   for(int i = 0; i< taille; i++){
     tab[i] = autre.tab[i];
   }
-  cout <<"dans constructeur "<<endl;
 }
 
 
@@ -68,12 +68,36 @@ void Dvector::fillRandomly(){
 }
 
 //Question 3
-Dvector::Dvector(std::string fichier){
-  std::ifstream Fichier(fichier.c_str());
-  if(Fichier.fail()){
-    *this = Dvector();
-    return;
+int getNbLine(std::string filename){
+  std::ifstream Fichier(filename.c_str());
+  int n = 0;
+  if(Fichier){
+    std::string ligne;
+    while(getline(Fichier, ligne)){
+      n++;
+    }
+  }else{
+      std::cout << "ERREUR : impossible d'ouvrir le fichier" << std::endl;
   }
+  return n;
+}
+
+Dvector::Dvector(std::string fichier){
+  taille = getNbLine(fichier);
+  std::ifstream Fichier(fichier.c_str());
+
+  if(Fichier){
+    tab = new double[taille];
+    std::string ligne;
+    int i = 0;
+    while(getline(Fichier, ligne)){
+      tab[i] = std::atof(ligne.c_str());
+      i++;
+    }
+  }else{
+    std::cout << "ERREUR : Impossible d'ouvrir le fichier" << std::endl;
+  }
+  Fichier.close();
 }
 
 //////////////////////////////
@@ -323,7 +347,7 @@ std::ostream & operator << (std::ostream & Out, const Dvector & v){
   for (int i =0; i<v.size(); i++){
     Out<<v(i)<<" ";
   }
-  Out<<"\n";
+  Out<< std::endl;
   return Out;
 }
 
