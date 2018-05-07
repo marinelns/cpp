@@ -1,6 +1,6 @@
-PROG = Dvector PhilipsWaveModel WaveModel GeneriqueVector Ocean
-INCLUDES =  Dvector.h PhilipsWaveModel.h WaveModel.h GeneriqueVector.h Ocean.h
-OBJ = Dvector.o PhilipsWaveModel.o WaveModel.o GeneriqueVector.o Ocean.o
+PROG = Dvector PhilipsWaveModel WaveModel GeneriqueVector Ocean GerstnerWaveModel GerstnerWave Height main
+INCLUDES =  Dvector.h PhilipsWaveModel.h WaveModel.h GeneriqueVector.h Ocean.h GerstnerWaveModel.h GerstnerWave.h Height.h main.h
+OBJ = Dvector.o PhilipsWaveModel.o WaveModel.o GeneriqueVector.o Ocean.o GerstnerWaveModel.o GerstnerWave.o Height.o main.o
 CXX = g++
 CXXFLAGS = -Wall
 

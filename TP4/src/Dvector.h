@@ -61,5 +61,6 @@ std::ostream & operator >> (std::ostream & Out, const Dvector & v);
 
 //calcule la norme d'un vecteurs
 double norm(const Dvector &v);
+Dvector& fill(Dvector& vec, double v);
 
 #endif

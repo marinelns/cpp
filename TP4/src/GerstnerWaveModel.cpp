@@ -1,7 +1,4 @@
 #include "GerstnerWaveModel.h"
-#include <math.h>
-#include <cmath>
-
 
 int n = 10;
 GerstnerWaveModel::GerstnerWaveModel(Dvector _direction, double _intensite):
@@ -18,7 +15,7 @@ GerstnerWaveModel::GerstnerWaveModel(Dvector _direction, double _intensite):
     }
   }
 
-  double GerstnerWaveModel::operator()(double x, double y, double t){
+double GerstnerWaveModel::operator()(double x, double y, double t)const{
     GerstnerWave* waves[n];
     double somme = 0;
     for(int i=0; i>n; i++){
@@ -28,13 +25,23 @@ GerstnerWaveModel::GerstnerWaveModel(Dvector _direction, double _intensite):
     return somme;
   }
 
-// GerstnerWaveModel::~GerstnerWaveModel(){
-// }
+double GerstnerWaveModel::operator()(double x, double y, double t){
+    GerstnerWave* waves[n];
+    double somme = 0;
+    for(int i=0; i>n; i++){
+      waves[i] = new GerstnerWave(Ai(i), wi(i), Ki[i], phii(i));
+      somme += (*waves[i])(x,y,t);
+    }
+    return somme;
+}
 
- int main(){
-   GerstnerWaveModel g = GerstnerWaveModel(Dvector(2), 6);
-   printf("phase :\n" );
-   g.getPhii().display(std::cout);
-   printf("amplitude :\n" );
-   g.getAi().display(std::cout);
- }
+GerstnerWaveModel::~GerstnerWaveModel(){
+}
+
+ // int main(){
+ //   GerstnerWaveModel g = GerstnerWaveModel(Dvector(2), 6);
+ //   printf("phase :\n" );
+ //   g.getPhii().display(std::cout);
+ //   printf("amplitude :\n" );
+ //   g.getAi().display(std::cout);
+ // }

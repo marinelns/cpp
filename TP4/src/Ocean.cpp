@@ -14,20 +14,22 @@ Ocean::Ocean(double lx, double ly, int nx, int ny, double t, WaveModel* model){
   this->hauteur = Height(Lx, Ly, Nx, Ny);
 }
 
-Height Ocean::getHauteur(){
-
-}
-
 void Ocean::setHauteur(double haut){
   this->t = t;
 }
 
 void Ocean::compute(){
-  for(int i =0; i < Nx; i++){
-    for(int j=0; j < Ny; j++){
+  for(double i =0; i < Nx; i++){
+    for(double j=0; j < Ny; j++){
       this->hauteur(i*Ny+j) = (*model)(i,j,t);
     }
   }
 }
 
-void gl_vertices(double hauteur_initiale);
+void Ocean::gl_vertices(double h_init){
+  for(double i =0; i < Nx; i++){
+    for(double j=0; j < Ny; j++){
+      this->hauteur(i*Ny+j) = h_init;
+    }
+  }
+}

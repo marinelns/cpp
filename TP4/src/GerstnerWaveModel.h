@@ -24,6 +24,7 @@ class GerstnerWaveModel : public WaveModel{
     public:
       //constructeur
       GerstnerWaveModel(Dvector _direction, double _intensite);
+      
       //GerstnerWaveModel(const GerstnerWaveModel& g);
       ~GerstnerWaveModel();
 
@@ -35,6 +36,7 @@ class GerstnerWaveModel : public WaveModel{
       Dvector getPhii() {return phii;}
 
       double operator()(double x, double y, double t);
+      double operator()(double x, double y, double t)const;
 
 };
 

@@ -32,7 +32,9 @@ class WaveModel{
     virtual double getLongueur() const;
     virtual double getAjustement() const;
 
-    virtual double operateur(double x, double y, double t);
+    virtual double operator()(double x, double y, double t)const=0;
+    virtual double operator()(double x, double y, double t)=0;
+    Dvector operator() (double t);
     //manque le foncteur
 
 };

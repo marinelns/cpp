@@ -68,3 +68,7 @@ double PhilipsWaveModel::houle(double kx, double ky){
 double PhilipsWaveModel::operator()(double x, double y, double t){
   return 0;
 }
+
+double PhilipsWaveModel::operator()(double x, double y, double t)const{
+  return 0;
+}

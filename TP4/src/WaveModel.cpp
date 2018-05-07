@@ -44,6 +44,8 @@ double WaveModel::getIntensite() const {return _intensite;}
 double WaveModel::getLongueur() const {return _longueur;}
 double WaveModel::getAjustement() const {return _ajustement;}
 
+Dvector WaveModel::operator () (double t){
+}
 
 
 //

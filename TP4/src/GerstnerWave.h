@@ -28,6 +28,7 @@ class GerstnerWave{
     /*operateur d'affectation*/
     GerstnerWave& operator = (const GerstnerWave& g);
     /*operateur permettant d'acceder a la classe comme un foncteur*/
-    double operator()(Dvector point, double t);
+    double operator()(double x, double y, double t) const;
+    double operator()(double x, double y, double t);
 };
 #endif

@@ -20,10 +20,12 @@ class Ocean{
   public:
     ~Ocean();
     Ocean(double lx, double ly, int nx, int ny, double t, WaveModel* model);
-    Height getHauteur();
+    Height getHauteur()const{
+      return hauteur;
+    }
     void setHauteur(double haut);
     void compute();
-    void gl_vertices(double hauteur_initiale);
+    void gl_vertices(double h_init);
 };
 
 #endif

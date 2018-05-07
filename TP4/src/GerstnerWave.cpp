@@ -1,9 +1,9 @@
 #include "GerstnerWave.h"
 #include <vector>
+#include "Dvector.h"
 
 
 GerstnerWave::GerstnerWave(double ampl, double phas, Dvector dir, double freq){
-  if(dir.size() != 2) throw Error("la direction doit être un Dvector de dim 2");
   _amplitude = ampl;
   _phase = phas;
   _directionOnde = dir;
@@ -26,17 +26,31 @@ double GerstnerWave::getFrequence() const {return _frequence;}
 
 GerstnerWave&GerstnerWave::operator = (const GerstnerWave& g){
   _directionOnde=Dvector();
-  memcpy(&_directionOnde, &g.getDirection(), sizeof(Dvector));
   _amplitude = g.getAmplitude();
   _phase = g.getPhase();
   _frequence = g.getFrequence();
   return *this;
 }
 
-double GerstnerWave::operator()(Dvector point, double t){
-  double hauteur_vague = _amplitude * cos(_directionOnde.pdt_scalaire(point) - _frequence*t + _phase);
+
+double GerstnerWave::operator()(double x, double y, double t) const{
+  Dvector x_h = Dvector(2);
+  x_h(1) = x;
+  x_h(1) = y;
+  double prod = x_h.pdt_scalaire(_directionOnde);
+  double hauteur_vague = _amplitude * cos(prod - _frequence*t + _phase);
   return hauteur_vague;
 }
+
+double GerstnerWave::operator()(double x, double y, double t){
+  Dvector x_h = Dvector(2);
+  x_h(1) = x;
+  x_h(1) = y;
+  double prod = _directionOnde.pdt_scalaire(x_h);
+  double hauteur_vague = _amplitude * cos(prod - _frequence*t + _phase);
+  return hauteur_vague;
+}
+
 
 
 // int main(){

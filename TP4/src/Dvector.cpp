@@ -391,6 +391,13 @@ double norm(const Dvector &v){
   return sqrt(res);
 }
 
+Dvector& fill(Dvector& vec, double v){
+  for(int i= 0; i<vec.size(); i++){
+      vec(i) =v;
+  }
+  return vec;
+}
+
 // int main(){
 //   Dvector v = Dvector(2);
 //   printf("La taille du vecteur v est %i \n ", v.size());
