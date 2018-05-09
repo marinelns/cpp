@@ -39,35 +39,31 @@ Dvector PhilipsWaveModel::operator() (double t){
   int l = 0;
   int taille  = N*M;
   GeneriqueVector htilde = GeneriqueVector(taille);
-
-  for(int n = -N/2; n< N/2; n++){
-    for(int m = -M/2; m< M/2; m++){
-      int kx = PIDOUBLE*n/N;
-      int ky = PIDOUBLE*m/M;
-      complex<double> premiere_part = cexp(sqrt(sqrt(kx*kx+ky*ky)*t)*PIDOUBLE)*(1/sqrt(2));
-      premiere_part *= (ksi)*(sqrt(houle(kx, ky)));
-
-      complex<double> seconde_part = cexp(-sqrt(sqrt(kx*kx+ky*ky)*t)*PIDOUBLE)*(1/sqrt(2));
-      seconde_part *= conj(ksi)*(sqrt(houle(kx, ky)));
-
+  for(int n = -N/2; n < N/2; n++){
+    for(int m = -M/2; m < M/2; m++){
+      double kx = 9.81*n/N;
+      double ky = 9.81*m/M;
+      complex<double> premiere_part = cexp(sqrt(9.81*sqrt(kx*kx+ky*ky)) * t);
+      premiere_part *= sqrt(houle(kx, ky)) * (1/sqrt(2)) * ksi;
+      complex<double> seconde_part = cexp(-sqrt(9.81*sqrt(kx*kx+ky*ky)) * t) * sqrt(houle(-kx, -ky));
+      seconde_part *= (1/sqrt(2)) * (conj(ksi));
       htilde(l++) = premiere_part + seconde_part;
     }
   }
-
-  GeneriqueVector vect = GeneriqueVector(taille);
-  vect = htilde.ifft();
+  htilde.ifft();
   Dvector vector = Dvector(taille);
-  for(int i = 0; i<taille; i++){
-    vector(i) = real(vect(i));
+  for(int i=0; i< taille; i++){
+      vector(i) = real(htilde(i));
   }
   return vector;
 }
 
+
 double PhilipsWaveModel::houle(double kx, double ky){
-  double prod_scal = kx*_direction(1) + ky*_direction(2);
-  double exponentielle = exp(-1/((kx*kx + ky*ky)*(_intensite*_intensite)));
-  double retour = A*exponentielle*prod_scal/(kx*kx+ky*ky);
-  return retour;
+    double kcarre = kx*kx + ky*ky;
+    double L = _intensite * _intensite / 9.81;
+    double scal = kx*_direction(0) + ky * _direction(1);
+    return A * exp((-1/(kcarre*L*L))/kcarre) * scal * scal;
 }
 
 double PhilipsWaveModel::operator()(double x, double y, double t){

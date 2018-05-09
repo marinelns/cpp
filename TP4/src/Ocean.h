@@ -41,10 +41,6 @@ class Ocean{
       return hauteur;
     }
 
-    void setVectorHauteur(Dvector vecteur){
-      hauteur.setVector(vecteur);
-    }
-
     void setHauteur(double haut);
 
     /*!

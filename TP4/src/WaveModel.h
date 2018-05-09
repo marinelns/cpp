@@ -86,7 +86,8 @@ class WaveModel{
     /*!
     * \brief operateur()
     */
-    Dvector operator() (double t);
+    virtual Dvector operator() (double t)const;
+    virtual Dvector operator() (double t);
 
 };
 #endif

@@ -55,6 +55,7 @@ class PhilipsWaveModel : public WaveModel{
     * \param kx, ky
     */
     double houle(double kx, double ky);
+
 };
 
 #endif

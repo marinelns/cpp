@@ -31,7 +31,7 @@ void Ocean::compute(){
 }
 
 void Ocean::computeset(){
-  setVectorHauteur((*model)(t));
+  hauteur.setVector((*model)(t));
 }
 
 void Ocean::gl_vertices(double h_init){

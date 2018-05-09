@@ -15,6 +15,7 @@ using namespace std;
 #include <sstream>
 #include <assert.h>
 #include <math.h>
+#include "GeneriqueVector.h"
 
 
 class Dvector{
@@ -271,5 +272,6 @@ double norm(const Dvector &v);
 * \return Dvector
 */
 Dvector& fill(Dvector& vec, double v);
+
 
 #endif

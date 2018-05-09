@@ -67,8 +67,8 @@ void Height::setNy(double n_y){
   this->ny = n_y;
 }
 
-void Height::setVector(Dvector vect){
-  this->vect = vect;
+void Height::setVector(Dvector vec){
+  this->vect = vec;
 }
 
 Height& Height::operator = (const Height& h){
