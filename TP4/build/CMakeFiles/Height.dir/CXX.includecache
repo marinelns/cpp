@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
+string.h
+-
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+fstream
+-
+cstdlib
+-
+sstream
+-
+assert.h
+-
+math.h
+-
+
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Height.h
+Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
+complex.h
+-
+assert.h
+-
+fstream
+-
+
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/tests/mainHeight.cpp
+../src/Height.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Height.h
+

@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/lib.dir/Dvector.cpp.o"
   "CMakeFiles/lib.dir/GeneriqueVector.cpp.o"
   "CMakeFiles/lib.dir/GerstnerWave.cpp.o"
@@ -12,6 +12,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/lib.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/lib.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -g -Wall -Wextra -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Ocean.dir/src/mainOcean.cpp.o  -o Ocean src/liblib.a 
+/usr/bin/c++   -g -Wall -Wextra    CMakeFiles/Ocean.dir/src/main.cxx.o  -o Ocean -rdynamic -lGLU -lGL -lSM -lICE -lX11 -lXext -lglut -lXmu -lXi src/liblibOcean.a 

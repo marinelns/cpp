@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -g -Wall -Wextra -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Dvector.dir/src/mainDvector.cpp.o  -o Dvector src/liblib.a 
+/usr/bin/c++   -g -Wall -Wextra    CMakeFiles/Dvector.dir/tests/mainDvector.cpp.o  -o Dvector -rdynamic src/liblibOcean.a 

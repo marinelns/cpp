@@ -1,10 +1,10 @@
-file(REMOVE_RECURSE
-  "CMakeFiles/Ocean.dir/src/mainOcean.cpp.o"
+FILE(REMOVE_RECURSE
+  "CMakeFiles/Ocean.dir/src/main.cxx.o"
   "Ocean.pdb"
   "Ocean"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/Ocean.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/Ocean.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)
