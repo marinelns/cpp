@@ -1,3 +1,7 @@
+/**
+* \file Height.cpp
+* \brief mise en place de la hauteur
+*/
 #include "Height.h"
 
 Height::Height(){
@@ -78,6 +82,7 @@ Height& Height::operator = (const Height& h){
 
 
 double& Height::operator() (int off) const{
+    assert(off>=0 && off < vect.size());
     return vect(off);
 }
 
@@ -88,15 +93,8 @@ std::ostream& operator << (std::ostream &out, const Height &h){
     }
     out << std::endl;
   }
-  for( int i =0; i < h.getNx();i++){
+  for(int i = 0; i < h.getNx();i++){
     out << i*h.getLx()/(h.getNx()-1) << "," << (h.getNy()-1)*h.getLy()/(h.getNy()-1) << "," << h(h.getNy()*i + h.getNy()- 1) << std::endl;
   }
   return out;
 }
-
-
-// int main(){
-//   Height h = Height(2,2,2,2);
-//   std::ofstream file("file.txt");
-//   file << h << endl;
-// }

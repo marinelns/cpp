@@ -1,0 +1,359 @@
+\hypertarget{Dvector_8h}{\section{Dvector.\-h File Reference}
+\label{Dvector_8h}\index{Dvector.\-h@{Dvector.\-h}}
+}
+
+
+mise en place des vecteurs  
+
+
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classDvector}{Dvector}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_a0fb8f5aab7a7dc9ef5fc016a537a8206}{operator+} (const \hyperlink{classDvector}{Dvector} \&v, const double \&c)
+\begin{DoxyCompactList}\small\item\em Operator + entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_a06dd932abfb745890a88b3adacb6312d}{operator+} (const \hyperlink{classDvector}{Dvector} \&v, const \hyperlink{classDvector}{Dvector} \&w)
+\begin{DoxyCompactList}\small\item\em Operator + entre deux vecteurs. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_a0a44c7f9dae454aa8dbf06895ae6331b}{operator+} (const double \&c, const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Operator + entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_ac159dbc9c17be508e28c99b0767b9617}{operator-\/} (const \hyperlink{classDvector}{Dvector} \&v, const double \&c)
+\begin{DoxyCompactList}\small\item\em Operator -\/ entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_ab63123aeb8e1dae3913139c8bd57ff5a}{operator-\/} (const \hyperlink{classDvector}{Dvector} \&v, const \hyperlink{classDvector}{Dvector} \&w)
+\begin{DoxyCompactList}\small\item\em Operator -\/ entre deux vecteurs. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_aa8095a854602974ca7033f1bb012b7f9}{operator-\/} (const double \&c, const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Operator -\/ entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_a7d794a97d4e7cc11399eecdc0b78ad23}{operator/} (const \hyperlink{classDvector}{Dvector} \&v, const double \&c)
+\begin{DoxyCompactList}\small\item\em Operator / entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_a266b39171b9e2376c8209f515b34c003}{operator/} (const double \&c, const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Operator / entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_ac588c185de9568e4e655cc4e4c7177c4}{operator$\ast$} (const \hyperlink{classDvector}{Dvector} \&v, const double \&c)
+\begin{DoxyCompactList}\small\item\em Operator $\ast$ entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_adf877009424ef10d2a07025a311482f7}{operator$\ast$} (const double \&c, const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Operator $\ast$ entre un vecteur et une constante. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{Dvector_8h_a27d7412e791053a1e20e06f289414ae0}{operator-\/} (const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Operator -\/. \end{DoxyCompactList}\item 
+std\-::ostream \& \hyperlink{Dvector_8h_a56075622db057c0b115006c881829590}{operator$<$$<$} (std\-::ostream \&Out, const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Permet d'écrire un vecteur. \end{DoxyCompactList}\item 
+std\-::ostream \& \hyperlink{Dvector_8h_adbb65ce5dc1865ef6b18604b95be4545}{operator$>$$>$} (std\-::ostream \&Out, const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Permet d'écrire un vecteur sur un ostream. \end{DoxyCompactList}\item 
+double \hyperlink{Dvector_8h_a9c401d697bbee51518646ccff27e6687}{norm} (const \hyperlink{classDvector}{Dvector} \&v)
+\begin{DoxyCompactList}\small\item\em Permet de calculer la norme d'un vecteur. \end{DoxyCompactList}\item 
+\hyperlink{classDvector}{Dvector} \& \hyperlink{Dvector_8h_ab73bfe25d28df9b6fa8c1d277ae51e71}{fill} (\hyperlink{classDvector}{Dvector} \&vec, double v)
+\begin{DoxyCompactList}\small\item\em Permet de remplir un vecteur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+mise en place des vecteurs mise en place des vecteurs complexs
+
+\subsection{Function Documentation}
+\hypertarget{Dvector_8h_ab73bfe25d28df9b6fa8c1d277ae51e71}{\index{Dvector.\-h@{Dvector.\-h}!fill@{fill}}
+\index{fill@{fill}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector}\& fill (
+\begin{DoxyParamCaption}
+\item[{{\bf Dvector} \&}]{vec, }
+\item[{double}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_ab73bfe25d28df9b6fa8c1d277ae51e71}
+
+
+Permet de remplir un vecteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,vec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a9c401d697bbee51518646ccff27e6687}{\index{Dvector.\-h@{Dvector.\-h}!norm@{norm}}
+\index{norm@{norm}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{norm}]{\setlength{\rightskip}{0pt plus 5cm}double norm (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a9c401d697bbee51518646ccff27e6687}
+
+
+Permet de calculer la norme d'un vecteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_ac588c185de9568e4e655cc4e4c7177c4}{\index{Dvector.\-h@{Dvector.\-h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v, }
+\item[{const double \&}]{c}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_ac588c185de9568e4e655cc4e4c7177c4}
+
+
+Operator $\ast$ entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_adf877009424ef10d2a07025a311482f7}{\index{Dvector.\-h@{Dvector.\-h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{c, }
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_adf877009424ef10d2a07025a311482f7}
+
+
+Operator $\ast$ entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a0fb8f5aab7a7dc9ef5fc016a537a8206}{\index{Dvector.\-h@{Dvector.\-h}!operator+@{operator+}}
+\index{operator+@{operator+}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v, }
+\item[{const double \&}]{c}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a0fb8f5aab7a7dc9ef5fc016a537a8206}
+
+
+Operator + entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a06dd932abfb745890a88b3adacb6312d}{\index{Dvector.\-h@{Dvector.\-h}!operator+@{operator+}}
+\index{operator+@{operator+}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v, }
+\item[{const {\bf Dvector} \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a06dd932abfb745890a88b3adacb6312d}
+
+
+Operator + entre deux vecteurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,w} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a0a44c7f9dae454aa8dbf06895ae6331b}{\index{Dvector.\-h@{Dvector.\-h}!operator+@{operator+}}
+\index{operator+@{operator+}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator+ (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{c, }
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a0a44c7f9dae454aa8dbf06895ae6331b}
+
+
+Operator + entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_ac159dbc9c17be508e28c99b0767b9617}{\index{Dvector.\-h@{Dvector.\-h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v, }
+\item[{const double \&}]{c}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_ac159dbc9c17be508e28c99b0767b9617}
+
+
+Operator -\/ entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_ab63123aeb8e1dae3913139c8bd57ff5a}{\index{Dvector.\-h@{Dvector.\-h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v, }
+\item[{const {\bf Dvector} \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_ab63123aeb8e1dae3913139c8bd57ff5a}
+
+
+Operator -\/ entre deux vecteurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,w} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_aa8095a854602974ca7033f1bb012b7f9}{\index{Dvector.\-h@{Dvector.\-h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{c, }
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_aa8095a854602974ca7033f1bb012b7f9}
+
+
+Operator -\/ entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a27d7412e791053a1e20e06f289414ae0}{\index{Dvector.\-h@{Dvector.\-h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a27d7412e791053a1e20e06f289414ae0}
+
+
+Operator -\/. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a7d794a97d4e7cc11399eecdc0b78ad23}{\index{Dvector.\-h@{Dvector.\-h}!operator/@{operator/}}
+\index{operator/@{operator/}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dvector} \&}]{v, }
+\item[{const double \&}]{c}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a7d794a97d4e7cc11399eecdc0b78ad23}
+
+
+Operator / entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a266b39171b9e2376c8209f515b34c003}{\index{Dvector.\-h@{Dvector.\-h}!operator/@{operator/}}
+\index{operator/@{operator/}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} operator/ (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{c, }
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a266b39171b9e2376c8209f515b34c003}
+
+
+Operator / entre un vecteur et une constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v,c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDvector}{Dvector} 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_a56075622db057c0b115006c881829590}{\index{Dvector.\-h@{Dvector.\-h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{Out, }
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_a56075622db057c0b115006c881829590}
+
+
+Permet d'écrire un vecteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream,v} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream 
+\end{DoxyReturn}
+\hypertarget{Dvector_8h_adbb65ce5dc1865ef6b18604b95be4545}{\index{Dvector.\-h@{Dvector.\-h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Dvector.h@{Dvector.\-h}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{Out, }
+\item[{const {\bf Dvector} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Dvector_8h_adbb65ce5dc1865ef6b18604b95be4545}
+
+
+Permet d'écrire un vecteur sur un ostream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream,v} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream 
+\end{DoxyReturn}

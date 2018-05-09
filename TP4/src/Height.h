@@ -1,3 +1,7 @@
+/**
+* \file Height.h
+* \brief mise en place d'un vecteur de GerstnerWave
+*/
 #include "Dvector.h"
 #include <complex.h>
 #include <assert.h>
@@ -11,30 +15,58 @@
  */
 class Height{
   private :
-    Dvector vect;
-    double lx;
-    double ly;
-    double nx;
-    double ny;
+    Dvector vect;/*!< vecteur*/
+    double lx;/*!< longueur x*/
+    double ly;/*!< longueur y*/
+    double nx;/*!< nombre x*/
+    double ny;/*!< nombre y*/
 
   public :
-    //constructeur par defaut
+    /*!
+    * \brief constructeur par defaut
+    */
     Height();
-    //constructeur avec initialisation du tableau
+
+    /*!
+    * \brief constructeur avec initialisation du tableau
+    * \param l_x, l_y, n_x, n_y
+    */
     Height(double l_x, double l_y, double n_x, double n_y);
-    //constructeur par copie
+
+    /*!
+    * \brief constructeur par copie
+    * \param h
+    */
     Height(const Height & h);
-    //destructeur
+
+    /*!
+    * \brief destructeur
+    */
     ~Height();
-    //Accesseur au tableau des vecteurs
+
+    /*!
+    * \brief Accesseur au tableau des vecteurs
+    */
     Dvector getVector() const;
-    //Accesseur a lx
+
+    /*!
+    * \brief Accesseur a lx
+    */
     double getLx() const;
-    //Accesseur a ly
+
+    /*!
+    * \brief Accesseur a ly
+    */
     double getLy() const;
-    //Accesseur a nx
+
+    /*!
+    * \brief Accesseur a nx
+    */
     double getNx() const;
-    //Accesseur a ny
+
+    /*!
+    * \brief Accesseur a ny
+    */
     double getNy() const;
 
     void setLx(double l_x);
@@ -42,12 +74,26 @@ class Height{
     void setNx(double n_x);
     void setNy(double n_y);
     void setVector(Dvector vect);
+
+    /*!
+    * \brief operateur()
+    * \param off
+    */
     double& operator() (int off) const;
-    //operateur d'affectation
+
+    /*!
+    * \brief operateur d'affectation
+    * \param h
+    */
     Height& operator=(const Height& h);
 
 };
 
+/*!
+* \brief operateur <<
+* \param ostream out, h
+* \return ostream
+*/
 std::ostream& operator << (std::ostream &out, const Height &H);
 
 #endif

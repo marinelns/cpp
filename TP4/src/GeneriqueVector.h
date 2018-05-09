@@ -1,3 +1,8 @@
+/**
+* \file GeneriqueVector.h
+* \brief mise en place de vecteurs complex
+*/
+
 #ifndef GeneriqueVectorH
 #define GeneriqueVectorH
 #include <string.h>
@@ -12,7 +17,6 @@ using namespace std;
 #include <complex.h>
 #include <sstream>
 #include <assert.h>
-#include <fstream>
 const double PI = 3.14159265359;
 
 

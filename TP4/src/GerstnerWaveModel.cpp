@@ -1,6 +1,14 @@
+/**
+* \file GerstnerWaveModel.c
+* \brief mise en place d'un vecteur de GerstnerWave
+*/
+
 #include "GerstnerWaveModel.h"
 
+/*initialisation du pramètre n */
 int n = 10;
+
+
 GerstnerWaveModel::GerstnerWaveModel(Dvector _direction, double _intensite):
   WaveModel(_direction, 0.0f, _intensite, 0.0f, 0.0f), nb_ondes(n), Ai(Dvector(n)), wi(Dvector(n)), phii(Dvector(n))
   {
@@ -37,11 +45,3 @@ double GerstnerWaveModel::operator()(double x, double y, double t){
 
 GerstnerWaveModel::~GerstnerWaveModel(){
 }
-
- // int main(){
- //   GerstnerWaveModel g = GerstnerWaveModel(Dvector(2), 6);
- //   printf("phase :\n" );
- //   g.getPhii().display(std::cout);
- //   printf("amplitude :\n" );
- //   g.getAi().display(std::cout);
- // }

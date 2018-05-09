@@ -1,0 +1,124 @@
+\hypertarget{classWaveModel}{\section{Wave\-Model Class Reference}
+\label{classWaveModel}\index{Wave\-Model@{Wave\-Model}}
+}
+Inheritance diagram for Wave\-Model\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWaveModel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWaveModel_a3bf52f16322370656b8711a68ce5d194}{\hyperlink{classWaveModel_a3bf52f16322370656b8711a68ce5d194}{Wave\-Model} ()}\label{classWaveModel_a3bf52f16322370656b8711a68ce5d194}
+
+\begin{DoxyCompactList}\small\item\em constructeur par defaut \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_afe136a278dbd88362d0b28220c70bcba}{\hyperlink{classWaveModel_afe136a278dbd88362d0b28220c70bcba}{Wave\-Model} (\hyperlink{classDvector}{Dvector} dir, \hyperlink{classDvector}{Dvector} align, double inte, double longu, double ajust)}\label{classWaveModel_afe136a278dbd88362d0b28220c70bcba}
+
+\begin{DoxyCompactList}\small\item\em constructeur avec valeurs \end{DoxyCompactList}\item 
+\hyperlink{classWaveModel_a15efb97c38955e3b5cacacf27b20e65b}{Wave\-Model} (const \hyperlink{classWaveModel}{Wave\-Model} \&w)
+\begin{DoxyCompactList}\small\item\em constructeur par copie \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_a83b17b2ec70b9ace55d5b3872f75dcce}{virtual \hyperlink{classWaveModel_a83b17b2ec70b9ace55d5b3872f75dcce}{$\sim$\-Wave\-Model} ()}\label{classWaveModel_a83b17b2ec70b9ace55d5b3872f75dcce}
+
+\begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
+virtual \hyperlink{classWaveModel}{Wave\-Model} \& \hyperlink{classWaveModel_acbbb099975edc7b7ef03b23deb67bd68}{operator=} (const \hyperlink{classWaveModel}{Wave\-Model} \&w)
+\begin{DoxyCompactList}\small\item\em operateur d'affectation = \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_aaa56c92a70a69883a0d3c4da642f3d7b}{virtual \hyperlink{classDvector}{Dvector} \hyperlink{classWaveModel_aaa56c92a70a69883a0d3c4da642f3d7b}{get\-Direction} () const }\label{classWaveModel_aaa56c92a70a69883a0d3c4da642f3d7b}
+
+\begin{DoxyCompactList}\small\item\em accesseur direction \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_a2071bf319952d0a92b8724e930304261}{virtual \hyperlink{classDvector}{Dvector} \hyperlink{classWaveModel_a2071bf319952d0a92b8724e930304261}{get\-Alignement} () const }\label{classWaveModel_a2071bf319952d0a92b8724e930304261}
+
+\begin{DoxyCompactList}\small\item\em accesseur alignement \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_ae89da87502a9d4aed28897622a4388b7}{virtual double \hyperlink{classWaveModel_ae89da87502a9d4aed28897622a4388b7}{get\-Intensite} () const }\label{classWaveModel_ae89da87502a9d4aed28897622a4388b7}
+
+\begin{DoxyCompactList}\small\item\em accesseur intensite \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_a4fb84ba8f4904d1da2141faf787288c2}{virtual double \hyperlink{classWaveModel_a4fb84ba8f4904d1da2141faf787288c2}{get\-Longueur} () const }\label{classWaveModel_a4fb84ba8f4904d1da2141faf787288c2}
+
+\begin{DoxyCompactList}\small\item\em accesseur longueur \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_a511f75ab038ce7e25626dd8978d04705}{virtual double \hyperlink{classWaveModel_a511f75ab038ce7e25626dd8978d04705}{get\-Ajustement} () const }\label{classWaveModel_a511f75ab038ce7e25626dd8978d04705}
+
+\begin{DoxyCompactList}\small\item\em accesseur ajustement \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_a66612d80d52ef2619c7437f6ef26ac86}{virtual double \hyperlink{classWaveModel_a66612d80d52ef2619c7437f6ef26ac86}{operator()} (double x, double y, double t) const =0}\label{classWaveModel_a66612d80d52ef2619c7437f6ef26ac86}
+
+\begin{DoxyCompactList}\small\item\em operateur() \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_ae0e5faa7ef8518d2e7967f688cba687d}{virtual double \hyperlink{classWaveModel_ae0e5faa7ef8518d2e7967f688cba687d}{operator()} (double x, double y, double t)=0}\label{classWaveModel_ae0e5faa7ef8518d2e7967f688cba687d}
+
+\begin{DoxyCompactList}\small\item\em operateur() \end{DoxyCompactList}\item 
+\hypertarget{classWaveModel_a207b71f31539f610da337203e50a2a9b}{\hyperlink{classDvector}{Dvector} \hyperlink{classWaveModel_a207b71f31539f610da337203e50a2a9b}{operator()} (double t)}\label{classWaveModel_a207b71f31539f610da337203e50a2a9b}
+
+\begin{DoxyCompactList}\small\item\em operateur() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{classWaveModel_ab0ce1c49c362d60e89cef37e49cafb78}{\-\_\-direction}
+\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{classWaveModel_aaa61347e03992faa1e6718d459297f2e}{\-\_\-alignement}
+\item 
+double \hyperlink{classWaveModel_acbfbba2af6232fd3089615ab795a895e}{\-\_\-intensite}
+\item 
+double \hyperlink{classWaveModel_a4a94c157f40e1a842dff28b001964ab7}{\-\_\-longueur}
+\item 
+double \hyperlink{classWaveModel_a8b14fcf6aa82abbe24182fbe47bf4654}{\-\_\-ajustement}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classWaveModel_a15efb97c38955e3b5cacacf27b20e65b}{\index{Wave\-Model@{Wave\-Model}!Wave\-Model@{Wave\-Model}}
+\index{Wave\-Model@{Wave\-Model}!WaveModel@{Wave\-Model}}
+\subsubsection[{Wave\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Wave\-Model\-::\-Wave\-Model (
+\begin{DoxyParamCaption}
+\item[{const {\bf Wave\-Model} \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classWaveModel_a15efb97c38955e3b5cacacf27b20e65b}
+
+
+constructeur par copie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classWaveModel_acbbb099975edc7b7ef03b23deb67bd68}{\index{Wave\-Model@{Wave\-Model}!operator=@{operator=}}
+\index{operator=@{operator=}!WaveModel@{Wave\-Model}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wave\-Model} \& Wave\-Model\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Wave\-Model} \&}]{w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classWaveModel_acbbb099975edc7b7ef03b23deb67bd68}
+
+
+operateur d'affectation = 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classWaveModel_a8b14fcf6aa82abbe24182fbe47bf4654}{\index{Wave\-Model@{Wave\-Model}!\-\_\-ajustement@{\-\_\-ajustement}}
+\index{\-\_\-ajustement@{\-\_\-ajustement}!WaveModel@{Wave\-Model}}
+\subsubsection[{\-\_\-ajustement}]{\setlength{\rightskip}{0pt plus 5cm}double Wave\-Model\-::\-\_\-ajustement\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWaveModel_a8b14fcf6aa82abbe24182fbe47bf4654}
+ajustement de la hauteur des vagues \hypertarget{classWaveModel_aaa61347e03992faa1e6718d459297f2e}{\index{Wave\-Model@{Wave\-Model}!\-\_\-alignement@{\-\_\-alignement}}
+\index{\-\_\-alignement@{\-\_\-alignement}!WaveModel@{Wave\-Model}}
+\subsubsection[{\-\_\-alignement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} Wave\-Model\-::\-\_\-alignement\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWaveModel_aaa61347e03992faa1e6718d459297f2e}
+alignement moyen des vagues \hypertarget{classWaveModel_ab0ce1c49c362d60e89cef37e49cafb78}{\index{Wave\-Model@{Wave\-Model}!\-\_\-direction@{\-\_\-direction}}
+\index{\-\_\-direction@{\-\_\-direction}!WaveModel@{Wave\-Model}}
+\subsubsection[{\-\_\-direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} Wave\-Model\-::\-\_\-direction\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWaveModel_ab0ce1c49c362d60e89cef37e49cafb78}
+direction du vent \hypertarget{classWaveModel_acbfbba2af6232fd3089615ab795a895e}{\index{Wave\-Model@{Wave\-Model}!\-\_\-intensite@{\-\_\-intensite}}
+\index{\-\_\-intensite@{\-\_\-intensite}!WaveModel@{Wave\-Model}}
+\subsubsection[{\-\_\-intensite}]{\setlength{\rightskip}{0pt plus 5cm}double Wave\-Model\-::\-\_\-intensite\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWaveModel_acbfbba2af6232fd3089615ab795a895e}
+intensite \hypertarget{classWaveModel_a4a94c157f40e1a842dff28b001964ab7}{\index{Wave\-Model@{Wave\-Model}!\-\_\-longueur@{\-\_\-longueur}}
+\index{\-\_\-longueur@{\-\_\-longueur}!WaveModel@{Wave\-Model}}
+\subsubsection[{\-\_\-longueur}]{\setlength{\rightskip}{0pt plus 5cm}double Wave\-Model\-::\-\_\-longueur\hspace{0.3cm}{\ttfamily [protected]}}}\label{classWaveModel_a4a94c157f40e1a842dff28b001964ab7}
+longueur d'onde moyenne 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{WaveModel_8h}{Wave\-Model.\-h}\item 
+\hyperlink{WaveModel_8cpp}{Wave\-Model.\-cpp}\end{DoxyCompactItemize}

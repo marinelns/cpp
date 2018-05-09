@@ -1,3 +1,7 @@
+/**
+* \file Ocean.cpp
+* \brief mise en place de l'ocean de vectur
+*/
 #include "Ocean.h"
 
 Ocean::~Ocean(){
@@ -15,7 +19,7 @@ Ocean::Ocean(double lx, double ly, int nx, int ny, double t, WaveModel* model){
 }
 
 void Ocean::setHauteur(double haut){
-  this->t = t;
+  this->t = haut;
 }
 
 void Ocean::compute(){
@@ -24,6 +28,10 @@ void Ocean::compute(){
       this->hauteur(i*Ny+j) = (*model)(i,j,t);
     }
   }
+}
+
+void Ocean::computeset(){
+  setVectorHauteur((*model)(t));
 }
 
 void Ocean::gl_vertices(double h_init){

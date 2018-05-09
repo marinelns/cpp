@@ -1,14 +1,10 @@
-#include <string.h>
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-using namespace std;
-#include <cstdlib>
-#include <fstream>
+/**
+* \file Dvector.c
+* \brief mise en place des vecteurs
+*/
+
 #include "Dvector.h"
-#include <sstream>
-#include <assert.h>
-#include <math.h>
+
 
 Dvector::Dvector(Dvector const& autre){
   int taillAutre = autre.taille;

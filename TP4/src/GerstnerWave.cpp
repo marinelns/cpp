@@ -1,3 +1,7 @@
+/**
+* \file GerstnerWave.c
+* \brief mise en place des vecteurs avec la hauteur Gestern
+*/
 #include "GerstnerWave.h"
 #include <vector>
 #include "Dvector.h"
@@ -50,10 +54,3 @@ double GerstnerWave::operator()(double x, double y, double t){
   double hauteur_vague = _amplitude * cos(prod - _frequence*t + _phase);
   return hauteur_vague;
 }
-
-
-
-// int main(){
-//   GerstnerWave g = GerstnerWave(5.9, 3, Dvector(2), 6);
-//   printf("phase %f\n", g.getPhase());
-// }

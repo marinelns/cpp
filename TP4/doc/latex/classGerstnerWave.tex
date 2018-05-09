@@ -1,0 +1,171 @@
+\hypertarget{classGerstnerWave}{\section{Gerstner\-Wave Class Reference}
+\label{classGerstnerWave}\index{Gerstner\-Wave@{Gerstner\-Wave}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGerstnerWave_a0045d1db79193644ca35bee5792a1b27}{Gerstner\-Wave} (double ampl, double phas, \hyperlink{classDvector}{Dvector} dir, double freq)
+\begin{DoxyCompactList}\small\item\em constructeur avec initialisation des paramètres \end{DoxyCompactList}\item 
+\hyperlink{classGerstnerWave_a14bf3cb2ed7f00cb86317beed8a1b79a}{Gerstner\-Wave} (const \hyperlink{classGerstnerWave}{Gerstner\-Wave} \&g)
+\begin{DoxyCompactList}\small\item\em constructeur par copie \end{DoxyCompactList}\item 
+\hypertarget{classGerstnerWave_af3df02ad2ba5fa164c83e332eabadfea}{\hyperlink{classGerstnerWave_af3df02ad2ba5fa164c83e332eabadfea}{$\sim$\-Gerstner\-Wave} ()}\label{classGerstnerWave_af3df02ad2ba5fa164c83e332eabadfea}
+
+\begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
+\hypertarget{classGerstnerWave_af7652183f345e8fa3830230765fd66dc}{double \hyperlink{classGerstnerWave_af7652183f345e8fa3830230765fd66dc}{get\-Amplitude} () const }\label{classGerstnerWave_af7652183f345e8fa3830230765fd66dc}
+
+\begin{DoxyCompactList}\small\item\em accesseur pour l'amplitude \end{DoxyCompactList}\item 
+\hypertarget{classGerstnerWave_a6e7d08e560ccc9713cb0f195779ddbf5}{double \hyperlink{classGerstnerWave_a6e7d08e560ccc9713cb0f195779ddbf5}{get\-Phase} () const }\label{classGerstnerWave_a6e7d08e560ccc9713cb0f195779ddbf5}
+
+\begin{DoxyCompactList}\small\item\em accesseur pour la phase \end{DoxyCompactList}\item 
+\hypertarget{classGerstnerWave_a0da29133a4909347e29a5689aa0a8608}{\hyperlink{classDvector}{Dvector} \hyperlink{classGerstnerWave_a0da29133a4909347e29a5689aa0a8608}{get\-Direction} () const }\label{classGerstnerWave_a0da29133a4909347e29a5689aa0a8608}
+
+\begin{DoxyCompactList}\small\item\em accesseur pour la direction \end{DoxyCompactList}\item 
+\hypertarget{classGerstnerWave_aba276c45f82541ae705e887fcd713b8c}{double \hyperlink{classGerstnerWave_aba276c45f82541ae705e887fcd713b8c}{get\-Frequence} () const }\label{classGerstnerWave_aba276c45f82541ae705e887fcd713b8c}
+
+\begin{DoxyCompactList}\small\item\em accesseur pour la fréquence \end{DoxyCompactList}\item 
+\hyperlink{classGerstnerWave}{Gerstner\-Wave} \& \hyperlink{classGerstnerWave_a8580f5ccd3801c4d97ba89f8e55bf4bd}{operator=} (const \hyperlink{classGerstnerWave}{Gerstner\-Wave} \&g)
+\begin{DoxyCompactList}\small\item\em operateur = \end{DoxyCompactList}\item 
+double \hyperlink{classGerstnerWave_a19861f5ff98d978c98faeedfaabd1bec}{operator()} (double x, double y, double t) const 
+\begin{DoxyCompactList}\small\item\em operateur permettant d'acceder a la classe comme un foncteur \end{DoxyCompactList}\item 
+double \hyperlink{classGerstnerWave_a286b95dabb3280f03fa6c0c130bd22a3}{operator()} (double x, double y, double t)
+\begin{DoxyCompactList}\small\item\em operateur permettant d'acceder a la classe comme un foncteur \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classGerstnerWave_ad6b1092e468e0126830317a310579f43}{\-\_\-amplitude}
+\item 
+double \hyperlink{classGerstnerWave_aee8b26bf0fd7274b7a8483f318d6c950}{\-\_\-phase}
+\item 
+\hyperlink{classDvector}{Dvector} \hyperlink{classGerstnerWave_a0a4926740fe7e170e5a9ca2b76815583}{\-\_\-direction\-Onde}
+\item 
+double \hyperlink{classGerstnerWave_ab49814056dd4b3258f04a206f7a6e920}{\-\_\-frequence}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGerstnerWave_a0045d1db79193644ca35bee5792a1b27}{\index{Gerstner\-Wave@{Gerstner\-Wave}!Gerstner\-Wave@{Gerstner\-Wave}}
+\index{Gerstner\-Wave@{Gerstner\-Wave}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{Gerstner\-Wave}]{\setlength{\rightskip}{0pt plus 5cm}Gerstner\-Wave\-::\-Gerstner\-Wave (
+\begin{DoxyParamCaption}
+\item[{double}]{ampl, }
+\item[{double}]{phas, }
+\item[{{\bf Dvector}}]{dir, }
+\item[{double}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classGerstnerWave_a0045d1db79193644ca35bee5792a1b27}
+
+
+constructeur avec initialisation des paramètres 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ampl} & \-: amplitude initiale du vecteur \\
+\hline
+{\em phas} & \-: phase initiale du vecteur \\
+\hline
+{\em dir} & \-: vecteur initiale \\
+\hline
+{\em freq} & \-: frequence initiale \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGerstnerWave_a14bf3cb2ed7f00cb86317beed8a1b79a}{\index{Gerstner\-Wave@{Gerstner\-Wave}!Gerstner\-Wave@{Gerstner\-Wave}}
+\index{Gerstner\-Wave@{Gerstner\-Wave}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{Gerstner\-Wave}]{\setlength{\rightskip}{0pt plus 5cm}Gerstner\-Wave\-::\-Gerstner\-Wave (
+\begin{DoxyParamCaption}
+\item[{const {\bf Gerstner\-Wave} \&}]{g}
+\end{DoxyParamCaption}
+)}}\label{classGerstnerWave_a14bf3cb2ed7f00cb86317beed8a1b79a}
+
+
+constructeur par copie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \-: \hyperlink{classGerstnerWave}{Gerstner\-Wave} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGerstnerWave_a19861f5ff98d978c98faeedfaabd1bec}{\index{Gerstner\-Wave@{Gerstner\-Wave}!operator()@{operator()}}
+\index{operator()@{operator()}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}double Gerstner\-Wave\-::operator() (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{t}
+\end{DoxyParamCaption}
+) const}}\label{classGerstnerWave_a19861f5ff98d978c98faeedfaabd1bec}
+
+
+operateur permettant d'acceder a la classe comme un foncteur 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y,t} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\hypertarget{classGerstnerWave_a286b95dabb3280f03fa6c0c130bd22a3}{\index{Gerstner\-Wave@{Gerstner\-Wave}!operator()@{operator()}}
+\index{operator()@{operator()}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}double Gerstner\-Wave\-::operator() (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{t}
+\end{DoxyParamCaption}
+)}}\label{classGerstnerWave_a286b95dabb3280f03fa6c0c130bd22a3}
+
+
+operateur permettant d'acceder a la classe comme un foncteur 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y,t} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\hypertarget{classGerstnerWave_a8580f5ccd3801c4d97ba89f8e55bf4bd}{\index{Gerstner\-Wave@{Gerstner\-Wave}!operator=@{operator=}}
+\index{operator=@{operator=}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gerstner\-Wave} \& Gerstner\-Wave\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Gerstner\-Wave} \&}]{g}
+\end{DoxyParamCaption}
+)}}\label{classGerstnerWave_a8580f5ccd3801c4d97ba89f8e55bf4bd}
+
+
+operateur = 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classGerstnerWave}{Gerstner\-Wave} 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGerstnerWave_ad6b1092e468e0126830317a310579f43}{\index{Gerstner\-Wave@{Gerstner\-Wave}!\-\_\-amplitude@{\-\_\-amplitude}}
+\index{\-\_\-amplitude@{\-\_\-amplitude}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{\-\_\-amplitude}]{\setlength{\rightskip}{0pt plus 5cm}double Gerstner\-Wave\-::\-\_\-amplitude\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGerstnerWave_ad6b1092e468e0126830317a310579f43}
+Amplitude \hypertarget{classGerstnerWave_a0a4926740fe7e170e5a9ca2b76815583}{\index{Gerstner\-Wave@{Gerstner\-Wave}!\-\_\-direction\-Onde@{\-\_\-direction\-Onde}}
+\index{\-\_\-direction\-Onde@{\-\_\-direction\-Onde}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{\-\_\-direction\-Onde}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dvector} Gerstner\-Wave\-::\-\_\-direction\-Onde\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGerstnerWave_a0a4926740fe7e170e5a9ca2b76815583}
+Direction onde \hypertarget{classGerstnerWave_ab49814056dd4b3258f04a206f7a6e920}{\index{Gerstner\-Wave@{Gerstner\-Wave}!\-\_\-frequence@{\-\_\-frequence}}
+\index{\-\_\-frequence@{\-\_\-frequence}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{\-\_\-frequence}]{\setlength{\rightskip}{0pt plus 5cm}double Gerstner\-Wave\-::\-\_\-frequence\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGerstnerWave_ab49814056dd4b3258f04a206f7a6e920}
+Frequence \hypertarget{classGerstnerWave_aee8b26bf0fd7274b7a8483f318d6c950}{\index{Gerstner\-Wave@{Gerstner\-Wave}!\-\_\-phase@{\-\_\-phase}}
+\index{\-\_\-phase@{\-\_\-phase}!GerstnerWave@{Gerstner\-Wave}}
+\subsubsection[{\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}double Gerstner\-Wave\-::\-\_\-phase\hspace{0.3cm}{\ttfamily [protected]}}}\label{classGerstnerWave_aee8b26bf0fd7274b7a8483f318d6c950}
+Phase 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{GerstnerWave_8h}{Gerstner\-Wave.\-h}\item 
+Gerstner\-Wave.\-cpp\end{DoxyCompactItemize}

@@ -1,3 +1,8 @@
+/**
+* \file WaveModel.cpp
+* \brief mise en place de la classe Wave model qui permet de
+* créer la classe philips et gerstern
+*/
 #include "WaveModel.h"
 
 WaveModel::WaveModel(){
@@ -46,12 +51,3 @@ double WaveModel::getAjustement() const {return _ajustement;}
 
 Dvector WaveModel::operator () (double t){
 }
-
-
-//
-// int main(){
-//   Dvector v = Dvector(2,1);
-//   WaveModel w = WaveModel(v, v, 3, 5, 2);
-//   w.getDirection().display(std::cout);
-//   printf("On cherche la longueur %f \n ", w.getLongueur());
-// }

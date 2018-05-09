@@ -1,3 +1,8 @@
+/**
+* \file PhilipsWaveModel.cpp
+* \brief mise en place de vecteurs de philips
+*/
+
 #include "PhilipsWaveModel.h"
 
 

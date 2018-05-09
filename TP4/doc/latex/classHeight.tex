@@ -1,0 +1,136 @@
+\hypertarget{classHeight}{\section{Height Class Reference}
+\label{classHeight}\index{Height@{Height}}
+}
+
+
+{\ttfamily \#include $<$Height.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classHeight_a7fecf5018a116f8234513b222bae6a2f}{\hyperlink{classHeight_a7fecf5018a116f8234513b222bae6a2f}{Height} ()}\label{classHeight_a7fecf5018a116f8234513b222bae6a2f}
+
+\begin{DoxyCompactList}\small\item\em constructeur par defaut \end{DoxyCompactList}\item 
+\hyperlink{classHeight_afef85fd5b8127c4bb4f27e05a4c869fe}{Height} (double l\-\_\-x, double l\-\_\-y, double n\-\_\-x, double n\-\_\-y)
+\begin{DoxyCompactList}\small\item\em constructeur avec initialisation du tableau \end{DoxyCompactList}\item 
+\hyperlink{classHeight_a2a357c8260db561016f559851ba3b831}{Height} (const \hyperlink{classHeight}{Height} \&h)
+\begin{DoxyCompactList}\small\item\em constructeur par copie \end{DoxyCompactList}\item 
+\hypertarget{classHeight_a93e56f89aa752196cc73ef5be717f386}{\hyperlink{classHeight_a93e56f89aa752196cc73ef5be717f386}{$\sim$\-Height} ()}\label{classHeight_a93e56f89aa752196cc73ef5be717f386}
+
+\begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
+\hypertarget{classHeight_ac6ea0710f17f06938ea23aac943769b0}{\hyperlink{classDvector}{Dvector} \hyperlink{classHeight_ac6ea0710f17f06938ea23aac943769b0}{get\-Vector} () const }\label{classHeight_ac6ea0710f17f06938ea23aac943769b0}
+
+\begin{DoxyCompactList}\small\item\em Accesseur au tableau des vecteurs. \end{DoxyCompactList}\item 
+\hypertarget{classHeight_a483c8bc6157331b43069cff8149d88f1}{double \hyperlink{classHeight_a483c8bc6157331b43069cff8149d88f1}{get\-Lx} () const }\label{classHeight_a483c8bc6157331b43069cff8149d88f1}
+
+\begin{DoxyCompactList}\small\item\em Accesseur a lx. \end{DoxyCompactList}\item 
+\hypertarget{classHeight_aff1fa60b41395a3e55b87bb75082d50d}{double \hyperlink{classHeight_aff1fa60b41395a3e55b87bb75082d50d}{get\-Ly} () const }\label{classHeight_aff1fa60b41395a3e55b87bb75082d50d}
+
+\begin{DoxyCompactList}\small\item\em Accesseur a ly. \end{DoxyCompactList}\item 
+\hypertarget{classHeight_a29aae8ffba5cbf9262b0dbbf09ffe37d}{double \hyperlink{classHeight_a29aae8ffba5cbf9262b0dbbf09ffe37d}{get\-Nx} () const }\label{classHeight_a29aae8ffba5cbf9262b0dbbf09ffe37d}
+
+\begin{DoxyCompactList}\small\item\em Accesseur a nx. \end{DoxyCompactList}\item 
+\hypertarget{classHeight_acb97ec45437cf773f7d2256545c05f03}{double \hyperlink{classHeight_acb97ec45437cf773f7d2256545c05f03}{get\-Ny} () const }\label{classHeight_acb97ec45437cf773f7d2256545c05f03}
+
+\begin{DoxyCompactList}\small\item\em Accesseur a ny. \end{DoxyCompactList}\item 
+\hypertarget{classHeight_ac1f6dd58c6445abd25acec345eff1dad}{void {\bfseries set\-Lx} (double l\-\_\-x)}\label{classHeight_ac1f6dd58c6445abd25acec345eff1dad}
+
+\item 
+\hypertarget{classHeight_aba395aecd1274c86136e2b971bcde78a}{void {\bfseries set\-Ly} (double l\-\_\-y)}\label{classHeight_aba395aecd1274c86136e2b971bcde78a}
+
+\item 
+\hypertarget{classHeight_afa9d764aafd73d54a4758850c7818a41}{void {\bfseries set\-Nx} (double n\-\_\-x)}\label{classHeight_afa9d764aafd73d54a4758850c7818a41}
+
+\item 
+\hypertarget{classHeight_a6fb16d367a776466c8f889faa3b27cbf}{void {\bfseries set\-Ny} (double n\-\_\-y)}\label{classHeight_a6fb16d367a776466c8f889faa3b27cbf}
+
+\item 
+\hypertarget{classHeight_a644ca7635b73547aa0723ff1e9a97298}{void {\bfseries set\-Vector} (\hyperlink{classDvector}{Dvector} vect)}\label{classHeight_a644ca7635b73547aa0723ff1e9a97298}
+
+\item 
+double \& \hyperlink{classHeight_ade1c0807cbe1097b22436f8f0d857079}{operator()} (int off) const 
+\begin{DoxyCompactList}\small\item\em operateur() \end{DoxyCompactList}\item 
+\hyperlink{classHeight}{Height} \& \hyperlink{classHeight_a349ae0404a4c5e27616c8ca3ff25fa0d}{operator=} (const \hyperlink{classHeight}{Height} \&h)
+\begin{DoxyCompactList}\small\item\em operateur d'affectation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe qui contient l'ensemble des hauteurs calculées dans une boite carrée de taille physique (Lx, Ly) discretisee en (nx, ny) elements 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classHeight_afef85fd5b8127c4bb4f27e05a4c869fe}{\index{Height@{Height}!Height@{Height}}
+\index{Height@{Height}!Height@{Height}}
+\subsubsection[{Height}]{\setlength{\rightskip}{0pt plus 5cm}Height\-::\-Height (
+\begin{DoxyParamCaption}
+\item[{double}]{l\-\_\-x, }
+\item[{double}]{l\-\_\-y, }
+\item[{double}]{n\-\_\-x, }
+\item[{double}]{n\-\_\-y}
+\end{DoxyParamCaption}
+)}}\label{classHeight_afef85fd5b8127c4bb4f27e05a4c869fe}
+
+
+constructeur avec initialisation du tableau 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l\-\_\-x,l\-\_\-y,n\-\_\-x,n\-\_\-y} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHeight_a2a357c8260db561016f559851ba3b831}{\index{Height@{Height}!Height@{Height}}
+\index{Height@{Height}!Height@{Height}}
+\subsubsection[{Height}]{\setlength{\rightskip}{0pt plus 5cm}Height\-::\-Height (
+\begin{DoxyParamCaption}
+\item[{const {\bf Height} \&}]{h}
+\end{DoxyParamCaption}
+)}}\label{classHeight_a2a357c8260db561016f559851ba3b831}
+
+
+constructeur par copie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classHeight_ade1c0807cbe1097b22436f8f0d857079}{\index{Height@{Height}!operator()@{operator()}}
+\index{operator()@{operator()}!Height@{Height}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}double \& Height\-::operator() (
+\begin{DoxyParamCaption}
+\item[{int}]{off}
+\end{DoxyParamCaption}
+) const}}\label{classHeight_ade1c0807cbe1097b22436f8f0d857079}
+
+
+operateur() 
+
+
+\begin{DoxyParams}{Parameters}
+{\em off} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHeight_a349ae0404a4c5e27616c8ca3ff25fa0d}{\index{Height@{Height}!operator=@{operator=}}
+\index{operator=@{operator=}!Height@{Height}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Height} \& Height\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Height} \&}]{h}
+\end{DoxyParamCaption}
+)}}\label{classHeight_a349ae0404a4c5e27616c8ca3ff25fa0d}
+
+
+operateur d'affectation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Height_8h}{Height.\-h}\item 
+\hyperlink{Height_8cpp}{Height.\-cpp}\end{DoxyCompactItemize}
