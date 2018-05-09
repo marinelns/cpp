@@ -12,6 +12,13 @@ Height::Height(){
   ny = 0;
 }
 
+Height::Height(int const x, int const y, double init)
+{
+  this->nx = x;
+  this->ny = y;
+  this->vect = Dvector(x*y,init);
+}
+
 Height::Height(double l_x, double l_y, double n_x, double n_y){
   vect = Dvector(n_x*n_y);
   lx = l_x;
@@ -84,6 +91,20 @@ Height& Height::operator = (const Height& h){
 double& Height::operator() (int off) const{
     assert(off>=0 && off < vect.size());
     return vect(off);
+}
+
+double& Height::operator() (double i, double j) const {
+    if (i <= nx && j <= ny) {
+        return vect(i*nx + j);
+    }
+    throw "Cette case n'est pas dans le tableau";
+}
+
+double& Height::operator() (double i, double j) {
+    if (i <= nx && j <= ny) {
+        return vect(i*nx + j);
+    }
+    throw "Cette case n'est pas dans le tableau";
 }
 
 std::ostream& operator << (std::ostream &out, const Height &h){

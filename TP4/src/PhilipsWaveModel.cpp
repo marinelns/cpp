@@ -43,9 +43,9 @@ Dvector PhilipsWaveModel::operator() (double t){
     for(int m = -M/2; m < M/2; m++){
       double kx = 9.81*n/N;
       double ky = 9.81*m/M;
-      complex<double> premiere_part = cexp(sqrt(9.81*sqrt(kx*kx+ky*ky)) * t);
+      complex<double> premiere_part = exp(sqrt(9.81*sqrt(kx*kx+ky*ky)) * t);
       premiere_part *= sqrt(houle(kx, ky)) * (1/sqrt(2)) * ksi;
-      complex<double> seconde_part = cexp(-sqrt(9.81*sqrt(kx*kx+ky*ky)) * t) * sqrt(houle(-kx, -ky));
+      complex<double> seconde_part = exp(-sqrt(9.81*sqrt(kx*kx+ky*ky)) * t) * sqrt(houle(-kx, -ky));
       seconde_part *= (1/sqrt(2)) * (conj(ksi));
       htilde(l++) = premiere_part + seconde_part;
     }

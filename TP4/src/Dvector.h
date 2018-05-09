@@ -34,7 +34,7 @@ class Dvector{
     * \param longueur : longueur initiale du vecteur
     * \param valeur : valeur initiale du vecteur
     */
-    Dvector(int longueur, int valeur);
+    Dvector(int longueur, double valeur);
 
     /*!
     * \brief Constructeur

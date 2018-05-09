@@ -13,24 +13,28 @@ int main(int argc, char** argv) {
   double Ly = 5.0f;
   int nx = 64;
   int ny = 64;
+  double t = 5.0f;
 
-  double t = 0.0f;
-  double T = 5.0f;
-  double dt = 0.1f;
+  Dvector direction = Dvector(2);
 
-  Dvector wind_dir(2);
-  fill(wind_dir, 0.3);
-  double intensity = 0.5f;
+  Dvector alignement = Dvector(2,0.5);
+  double intensite = 0.5f;
+  double longueur = 1;
+  double ajustement = 0.8;
+
+  GerstnerWaveModel *wave = new GerstnerWaveModel(direction,intensite);
+  ocean = new Ocean(Lx,Ly,nx,ny,t,wave);
 
   /** @todo Initialiser du modèle*/
-  GerstnerWaveModel gerstner(wind_dir, intensity);
+  ocean->generateHeight(Ly);
+  //ocean->gl_vertices();
 
   /** @todo Initialiser du champ de hauteur */
-  ocean.gl_vertices(4.0);
+  //ocean.gl_vertices(4.0);
 
   /** @todo Initialiser de l'océan */
-  Ocean ocean(Lx, Ly, nx, ny, t, &gerstner);
-  
+  //ocean = new Ocean(Lx, Ly, nx, ny, t, &gerstner);
+
   /* Initialisation de la fenêtre d'affichage */
   Window::init(WIDTH, HEIGHT, "Houle", argc, argv, "AZERTY", 50, 1);
 

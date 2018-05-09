@@ -409,7 +409,8 @@ GeneriqueVector GeneriqueVector::fft(){
     odd.fft();
     int k = 0;
     while(k <=  N -1 ){
-      complex<double> t = ((complex<double>)cexp(-I*2*PI*k/N))*odd.tab[k];
+      complex<double> t = (exp(-std::complex<double>(0,1)*std::complex<double>(0,1)*std::complex<double>(2,0)
+            *std::complex<double>(M_PI,0)*std::complex<double>(k,0)/std::complex<double>(N,0)))*odd.tab[k];
       tab[k] = (even.tab[k] + t);
       tab[k + N] = even.tab[k] -t;
       k+= 1;
