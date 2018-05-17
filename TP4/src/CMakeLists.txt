@@ -9,5 +9,6 @@ set(SOURCES Dvector.cpp
             WaveModel.cpp
             camera.cxx
             window.cxx
-            main.cxx)
+            main.cxx
+            main.cpp)
 add_library(libOcean ${SOURCES})

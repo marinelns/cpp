@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/libOcean.dir/Dvector.cpp.o"
   "CMakeFiles/libOcean.dir/GeneriqueVector.cpp.o"
   "CMakeFiles/libOcean.dir/GerstnerWave.cpp.o"
@@ -10,11 +10,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/libOcean.dir/camera.cxx.o"
   "CMakeFiles/libOcean.dir/window.cxx.o"
   "CMakeFiles/libOcean.dir/main.cxx.o"
+  "CMakeFiles/libOcean.dir/main.cpp.o"
   "liblibOcean.pdb"
   "liblibOcean.a"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/libOcean.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/libOcean.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)

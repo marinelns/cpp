@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -g -Wall -Wextra -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Height.dir/tests/mainHeight.cpp.o  -o Height src/liblibOcean.a 
+/usr/bin/c++   -g -Wall -Wextra    CMakeFiles/Height.dir/tests/mainHeight.cpp.o  -o Height -rdynamic src/liblibOcean.a 

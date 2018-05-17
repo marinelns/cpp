@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 string.h
 -
 iostream
@@ -26,9 +26,9 @@ assert.h
 math.h
 -
 GeneriqueVector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/GeneriqueVector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/GeneriqueVector.h
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/GeneriqueVector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/GeneriqueVector.h
 string.h
 -
 iostream
@@ -52,21 +52,21 @@ sstream
 assert.h
 -
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/GerstnerWave.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/GerstnerWave.h
 Dvector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 cmath
 -
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/GerstnerWaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/GerstnerWaveModel.h
 Dvector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 WaveModel.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/WaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/WaveModel.h
 GerstnerWave.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/GerstnerWave.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/GerstnerWave.h
 Dvector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 vector
 -
 list
@@ -80,9 +80,9 @@ ctime
 iostream
 -
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Height.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Height.h
 Dvector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 complex.h
 -
 assert.h
@@ -90,29 +90,29 @@ assert.h
 fstream
 -
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Ocean.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Ocean.h
 iostream
 -
 assert.h
 -
 Height.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Height.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Height.h
 Dvector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 WaveModel.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/WaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/WaveModel.h
 GerstnerWaveModel.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/GerstnerWaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/GerstnerWaveModel.h
 PhilipsWaveModel.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/PhilipsWaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/PhilipsWaveModel.h
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/PhilipsWaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/PhilipsWaveModel.h
 Dvector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 WaveModel.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/WaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/WaveModel.h
 GeneriqueVector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/GeneriqueVector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/GeneriqueVector.h
 complex.h
 -
 assert.h
@@ -140,13 +140,13 @@ math.h
 cstring
 -
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/WaveModel.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/WaveModel.h
 Dvector.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Dvector.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Dvector.h
 Height.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Height.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Height.h
 
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/main.cxx
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/main.cxx
 cstdlib
 -
 ctime
@@ -154,9 +154,11 @@ ctime
 iostream
 -
 window.hxx
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/window.hxx
-
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/window.hxx
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/window.hxx
 Ocean.h
-/Users/marinelannes/Documents/IMAG/2A/C++/Ocean/cpp/TP4/src/Ocean.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Ocean.h
+
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/window.hxx
+Ocean.h
+/user/2/.base/lannesm/home/Semestre 4/C++/cpp/TP4/src/Ocean.h
 

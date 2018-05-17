@@ -16,6 +16,8 @@ namespace Window {
   /** Permet le déplacement dans la scène 3D */
   Camera* camera;
 
+  Ocean* ocean;
+
   /** Permet de gérer la fréquence d'affichage */
   int             frames(-1);
   int             fps;
@@ -125,7 +127,7 @@ namespace Window {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH | GLUT_MULTISAMPLE);
     glutInitWindowSize(width, height);
-    mainwindow = glutCreateWindow(titre.c_str());
+    glutCreateWindow(titre.c_str());
     glEnable(GL_MULTISAMPLE);
     Camera::KEYBOARD mode = keyboard=="azerty" ? Camera::AZERTY : Camera::QWERTY;
     camera = new Camera(mode, -100, 100, -100, 4*M_PI/7, M_PI/4, 0.01, translation_speed, WIDTH, HEIGHT);
@@ -146,8 +148,8 @@ namespace Window {
     t = glutGet(GLUT_ELAPSED_TIME);
 
     // Initialise le tableau de données à afficher
-    nxOcean = ocean->getNx();
-    nyOcean = ocean->getNy();
+    int nxOcean = ocean->getNx();
+    int nyOcean = ocean->getNy();
     for(int i=0 ; i<nyOcean ; i++) {
       vertexOceanX.push_back(new double[3*(nxOcean+1)]);
     }
@@ -189,6 +191,7 @@ namespace Window {
   }
 
   void reshape(int width, int height) {
+    Ocean *ocean;
     glViewport(0, 0, width, height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();

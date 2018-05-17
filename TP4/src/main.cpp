@@ -54,7 +54,7 @@ int main(int argc, char** argv)
 
     for (t = 0.0f; t < T; t += dt) {
         ocean.setHauteur(t);
-        ocean.compute();
+        ocean.compute(t);
 
         std::ofstream file("file.txt");
         file << ocean.getHauteur() << endl;
