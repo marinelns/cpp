@@ -23,7 +23,7 @@ Dvector::Dvector()
   this->taille = 0;
 }
 
-Dvector::Dvector(int longueur, int valeur)
+Dvector::Dvector(int longueur, double valeur)
 {
   tab = (double*) malloc(longueur * sizeof(double));
   for(int i = 0; i < longueur; i++){

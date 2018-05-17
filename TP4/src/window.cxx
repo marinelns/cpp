@@ -23,6 +23,8 @@ namespace Window {
   std::string     fps_str;
   time_t          sleep_avant(0);
   int             t;
+  double          temps;
+  double          temps2;
   struct timespec tim1, tim2;
 
   /** Nombres d'éléments de la scène et coordonées du maillage  */
@@ -74,8 +76,12 @@ namespace Window {
   }
 
   void draw_ocean() {
+    if(glutGet(GLUT_ELAPSED_TIME) - temps2 > 1){
+      temps2 = glutGet(GLUT_ELAPSED_TIME);
+      temps+=0.1;
+    }
     // Réalise effectivement l'étape de calcul
-    ocean->main_computation();
+    ocean->main_computation(temps);
 
     // Impose la couleur d'affichage de la grille
     glColor3ub(82, 184, 255);

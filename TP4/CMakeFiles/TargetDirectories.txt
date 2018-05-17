@@ -1,1 +1,0 @@
-/user/5/.base/ouchtary/home/Documents/CPlus/cpp/TP4/CMakeFiles/lib.dir

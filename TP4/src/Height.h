@@ -33,6 +33,7 @@ class Height{
     */
     Height(double l_x, double l_y, double n_x, double n_y);
 
+    Height(int const x, int const y, double init);
     /*!
     * \brief constructeur par copie
     * \param h
@@ -86,6 +87,18 @@ class Height{
     * \param h
     */
     Height& operator=(const Height& h);
+
+    /** Accès à la hauteur stockée
+    * @param[in] i numero de colonne
+    * @param[in] j numero de ligne
+    */
+    double& operator() (double i, double j);
+
+    /** Accès à la hauteur stockée en lecture seule
+    * @param[in] i   numero de colonne
+    * @param[in] j  numero de ligne
+    */
+    double& operator() (double i, double j) const;
 
 };
 
