@@ -37,11 +37,11 @@ int main(int argc, char** argv)
 
     // Initialisation du modele de houle
     fprintf(stdout, "Initialisation du modele de houle\n");
-    GerstnerWaveModel gerstner(wind, intensity);
+    PhilipsWaveModel philips(wind, intensity);
 
     // Initialisation de l'Ocean
     fprintf(stdout, "Initialisation de l'ocean\n");
-    Ocean ocean(Lx, Ly, nx, ny, t, &gerstner);
+    Ocean ocean(Lx, Ly, nx, ny, t, &philips);
 
     // Initialisation du champ de hauteur
     fprintf(stdout, "Initialisation du champ de hauteur\n");
